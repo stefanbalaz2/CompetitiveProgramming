@@ -1,6 +1,7 @@
 /*
 
 tutorial solution: https://codeforces.com/blog/entry/69815
+too much debug time because of missed corner cases and lacked attention
 
 */
 #include<bits/stdc++.h>
