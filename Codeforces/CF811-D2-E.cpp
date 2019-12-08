@@ -1,3 +1,8 @@
+/*
+
+    just a segtree with dsu, merging stuff
+
+*/
 #include<bits/stdc++.h>
 #define pb push_back
 using namespace std;
