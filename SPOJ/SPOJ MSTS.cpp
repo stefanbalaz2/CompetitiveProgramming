@@ -1,3 +1,6 @@
+/*
+     https://github.com/quangloc99/CompetitiveProgramming/blob/master/SPOJ/MSTS.cpp
+*/
 #include<bits/stdc++.h>
 #define pb push_back
 #define ff first
