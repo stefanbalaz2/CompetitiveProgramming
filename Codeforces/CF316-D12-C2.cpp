@@ -1,3 +1,8 @@
+/*
+
+    idea: https://codeforces.com/blog/entry/7937
+
+*/
 #include<bits/stdc++.h>
 #define pb push_back
 #define ff first
@@ -47,7 +52,6 @@ int dijkstra(int &ccost){
             int id=vect[x][i];
             if(e[id].cap==e[id].flow)continue;
 
-            ///int cost=pot[x]+e[id].cost-pot[e[id].b];
             int cost=e[id].cost;
             if(dp[e[id].b]>dp[x]+cost){
                 if(!pos[e[id].b])st.push(e[id].b);
@@ -56,8 +60,6 @@ int dijkstra(int &ccost){
             }
         }
     }
-
-    for(int i=source;i<=sink;i++)pot[i]=dp[i];
 
     int curr=sink;
     int minn=inf;
