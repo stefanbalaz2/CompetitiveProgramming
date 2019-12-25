@@ -1,6 +1,6 @@
 /*
 
-
+	editorial: https://codeforces.com/blog/entry/57840
 
 */
 #include<bits/stdc++.h>
