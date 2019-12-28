@@ -1,5 +1,5 @@
 /*
-    idea: 
+    idea: https://github.com/MetalBall887/Competitive-Programming/blob/master/AtCoder/AtCoder033-AGC-D.cpp
 */
 #include<bits/stdc++.h>
 using namespace std;
