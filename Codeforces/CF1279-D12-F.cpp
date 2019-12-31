@@ -1,3 +1,6 @@
+/*
+    editorial: https://codeforces.com/blog/entry/72577
+*/
 #include<bits/stdc++.h>
 using namespace std;
 #define ff first
