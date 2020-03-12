@@ -1,3 +1,8 @@
+/*
+
+    https://github.com/mostafa-saad/MyCompetitiveProgramming/blob/master/Olympiad/POI/official/2014/editorial/sup.pdf
+
+*/
 #include<bits/stdc++.h>
 #define ll long long
 #define ss second
