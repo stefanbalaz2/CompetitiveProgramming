@@ -1,5 +1,15 @@
 /*
 
+    idea: construct a flow network
+    source connected to the positive value nodes with flow equal to it
+    negative val nodes connected to sink with abs val of their value
+    edge a->b exists if b is reachable from a, a has positive val, b has negative val
+    result is: (sum of positive nodes) - (maxflow)
+
+    case to handle: when the result equals 0
+    we need to check if there exist a positive node which doesnt have a path to sink
+    if it exists then the answer is 0
+    else we cant invite anyone
 
 */
 #include <bits/stdc++.h>
@@ -111,27 +121,40 @@ int go(){
 
     return ret;
 }
-bool check(){
+bool check2(int x){
 
+    memset(pos,0,sizeof(pos));
+    queue<int>q;
+
+    q.push(x);
+
+    while(q.size()){
+
+        int x=q.front();
+        q.pop();
+
+        for(int i=0;i<vect[x].size();i++){
+            int id=vect[x][i];
+            if(pos[e[id].b] || e[id].flow>=e[id].cap)continue;
+
+            pos[e[id].b]=1;
+            q.push(e[id].b);
+        }
+
+    }
+
+    if(pos[sink])return false;
+    return true;
+
+}
+bool check(){
 
     for(int i=1;i<=n;i++)
         if(a[i]>=0){
-            if(vect[i].size()<=1)return true;
+            if(check2(i))return true;
         }
 
-    for(int i=1;i<=n;i++){
-        if(a[i]>=0)continue;
-        if(vect[i].size()<=1)continue;
-
-        for(int j=0;j<vect[i].size();j++){
-            int id=vect[i][j];
-            if(e[id].b!=sink)continue;
-
-            if(e[id].flow!=e[id].cap)return false;
-        }
-    }
-
-    return true;
+    return false;
 }
 int main(){
 
