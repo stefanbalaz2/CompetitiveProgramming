@@ -26,7 +26,7 @@
 #define pb push_back
 using namespace std;
 typedef pair<int,int> pii;
-const int maxn=5e2+10;
+const int maxn=5e4+10;
 int moze[maxn],ima[maxn],n,m;
 pii dp[3][maxn];
 vector<pii>rez,sol;
