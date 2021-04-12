@@ -1,3 +1,4 @@
+companion matrix
 zadaci iz fft i polinoma
 multidimension fft
 fwht i custom bitwise
