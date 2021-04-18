@@ -1,5 +1,5 @@
-fwht i custom bitwise
-multidimension fft
+onaj tadijin multi fft
+https://codeforces.com/gym/102978
 circulant matrix
 cyclotomic polynomials
 zadaci iz fft i polinoma
