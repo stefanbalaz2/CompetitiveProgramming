@@ -5,8 +5,8 @@ representations of groups
 2*5 DFT==10 DFT???
 abelian groups
 commutative algebra
-onaj tadijin multi fft https://codeforces.com/contest/1103/problem/E
 https://codeforces.com/gym/100886/problem/B
+https://codeforces.com/contest/1510  E,F,H,I
 https://codeforces.com/gym/102978
 circulant matrix
 cyclotomic polynomials
