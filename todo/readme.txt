@@ -1,3 +1,4 @@
+https://drive.google.com/drive/folders/1z7Xm3yMh_ogFY0j77g6E0G6aoIKd8L45
 http://www2.math.umd.edu/~jcohen/402/Pinter%20Algebra.pdf
 https://math.berkeley.edu/~apaulin/AbstractAlgebra.pdf
 DFT over finite groups
