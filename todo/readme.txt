@@ -2,11 +2,7 @@ https://drive.google.com/drive/folders/1z7Xm3yMh_ogFY0j77g6E0G6aoIKd8L45
 http://www2.math.umd.edu/~jcohen/402/Pinter%20Algebra.pdf
 https://math.berkeley.edu/~apaulin/AbstractAlgebra.pdf
 DFT over finite groups
-representations of groups
 2*5 DFT==10 DFT???
-abelian groups
-commutative algebra
-https://codeforces.com/gym/100886/problem/B
 https://codeforces.com/contest/1510  E,F,H,I
 https://codeforces.com/gym/102978
 circulant matrix
