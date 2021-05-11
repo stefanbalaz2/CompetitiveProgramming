@@ -5,6 +5,7 @@ DFT over finite groups
 2*5 DFT==10 DFT???
 https://codeforces.com/contest/1510  E,F,H,I
 https://codeforces.com/gym/102978
+https://codeforces.com/gym/102155/problem/B  probabilities
 circulant matrix
 cyclotomic polynomials
 permutant - cp algo polynomials and series
