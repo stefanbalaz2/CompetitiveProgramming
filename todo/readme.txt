@@ -1,15 +1,16 @@
 https://drive.google.com/drive/folders/1z7Xm3yMh_ogFY0j77g6E0G6aoIKd8L45   abstract algebra page 25.
-http://www2.math.umd.edu/~jcohen/402/Pinter%20Algebra.pdf
-https://math.berkeley.edu/~apaulin/AbstractAlgebra.pdf
-DFT over finite groups
-2*5 DFT==10 DFT???
+
+
+https://codeforces.com/blog/entry/98413   generalized mobius inversion on posets
+https://codeforces.com/blog/entry/98386   Lagrange interpolation and partial fraction decomposition
+https://codeforces.com/blog/entry/98376   Linear Basis (Xor Basis Extended)
+https://codeforces.com/blog/entry/66040   The Intuition Behind NIM and Grundy Numbers in Combinatorial Game Theory
+https://codeforces.com/blog/entry/90690   Finding minimum residue of a linear function in O(log M) time
+https://codeforces.com/blog/entry/92306   An interesting algebraic construction
+
+
+
 https://codeforces.com/contest/1510  E,F,H,I
 https://codeforces.com/gym/102978
 https://codeforces.com/gym/102155/problem/B  probabilities
-circulant matrix
-cyclotomic polynomials
-permutant - cp algo polynomials and series
-zadaci iz fft i polinoma
-ona takmicenja sa matom
-shvati zasto ne radi exp^P(x),P je polinom, kad P ima nulti clan
-graeffes method
+
