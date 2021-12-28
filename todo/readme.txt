@@ -7,7 +7,7 @@ https://codeforces.com/blog/entry/98376   Linear Basis (Xor Basis Extended)
 https://codeforces.com/blog/entry/66040   The Intuition Behind NIM and Grundy Numbers in Combinatorial Game Theory
 https://codeforces.com/blog/entry/90690   Finding minimum residue of a linear function in O(log M) time
 https://codeforces.com/blog/entry/92306   An interesting algebraic construction
-
+Partial_fraction_decomposition
 
 
 https://codeforces.com/contest/1510  E,F,H,I
