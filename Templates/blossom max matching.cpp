@@ -214,3 +214,31 @@ struct blossom{
     }
 
 };
+
+vector<pii> get_matching(vector<pii> edges){
+
+    int n=0;
+    for(int i=0;i<edges.size();i++)
+        n=max(n,max(edges[i].ff,edges[i].ss));
+    n++;
+
+    blossom b(n);
+
+    for(int i=0;i<edges.size();i++){
+        b.add_edge(edges[i].ff,edges[i].ss);
+    }
+
+    vector<pii>ret;
+    b.solve();
+    for(int i=0;i<n;i++){
+        if(b.mate[i]==-1)continue;
+
+        ret.pb({i,b.mate[i]});
+
+        b.mate[b.mate[i]]=-1;
+        b.mate[i]=-1;
+
+    }
+
+    return ret;
+}
