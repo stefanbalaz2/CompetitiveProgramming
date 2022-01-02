@@ -8,6 +8,7 @@ https://codeforces.com/blog/entry/66040   The Intuition Behind NIM and Grundy Nu
 https://codeforces.com/blog/entry/90690   Finding minimum residue of a linear function in O(log M) time
 https://codeforces.com/blog/entry/92306   An interesting algebraic construction
 https://en.wikipedia.org/wiki/Partial_fraction_decomposition   Partial_fraction_decomposition
+https://codeforces.com/blog/entry/98334   Aliens trick
 
 
 https://codeforces.com/contest/1510  E,F,H,I
