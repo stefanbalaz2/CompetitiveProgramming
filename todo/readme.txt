@@ -9,7 +9,7 @@ https://codeforces.com/blog/entry/90690   Finding minimum residue of a linear fu
 https://codeforces.com/blog/entry/92306   An interesting algebraic construction
 https://en.wikipedia.org/wiki/Partial_fraction_decomposition   Partial_fraction_decomposition
 https://codeforces.com/blog/entry/98334   Aliens trick
-
+minimax theorem
 
 https://codeforces.com/contest/1510  E,F,H,I
 https://codeforces.com/gym/102978
