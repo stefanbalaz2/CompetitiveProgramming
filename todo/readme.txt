@@ -1,6 +1,8 @@
 https://drive.google.com/drive/folders/1z7Xm3yMh_ogFY0j77g6E0G6aoIKd8L45   abstract algebra page 25.
 
 
+https://codeforces.com/blog/entry/76447 ode, generator functions
+
 https://codeforces.com/blog/entry/98413   generalized mobius inversion on posets
 https://codeforces.com/blog/entry/98386   Lagrange interpolation and partial fraction decomposition
 https://codeforces.com/blog/entry/98376   Linear Basis (Xor Basis Extended)
