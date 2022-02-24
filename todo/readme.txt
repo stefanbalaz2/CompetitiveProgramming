@@ -4,6 +4,7 @@ https://codeforces.com/blog/entry/99646
 https://codeforces.com/blog/entry/77468 generating
 https://codeforces.com/blog/entry/99598
 https://codeforces.com/blog/entry/76447 ode, generator functions
+https://codeforces.com/blog/entry/100279 transposed multi-eval
 
 https://codeforces.com/blog/entry/98413   generalized mobius inversion on posets
 https://codeforces.com/blog/entry/98386   Lagrange interpolation and partial fraction decomposition
