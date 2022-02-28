@@ -3,6 +3,7 @@ https://drive.google.com/drive/folders/1z7Xm3yMh_ogFY0j77g6E0G6aoIKd8L45   abstr
 https://codeforces.com/blog/entry/99646
 https://codeforces.com/blog/entry/77468 generating
 https://codeforces.com/blog/entry/99598
+https://codeforces.com/blog/entry/61306 berlkey massey
 https://codeforces.com/blog/entry/76447 ode, generator functions
 https://codeforces.com/blog/entry/100279 transposed multi-eval
 
