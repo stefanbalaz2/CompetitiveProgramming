@@ -12,6 +12,7 @@ namespace algebra {
 		typedef complex<ftype> point;
 
 		point w[maxn];
+		point A[maxn],B[maxn],C[maxn],D[maxn];
 		const ftype pi = acos(-1);
 		bool initiated = 0;
 		void init() {
@@ -65,8 +66,8 @@ namespace algebra {
 				n++;
 			}
 			a.resize(n);
-			static point A[maxn], B[maxn];
-			static point C[maxn], D[maxn];
+			/// /*static*/ point A[maxn], B[maxn];
+			/// /*static*/ point C[maxn], D[maxn];
 			for(size_t i = 0; i < n; i++) {
 				A[i] = point(a[i] & mask, a[i] >> shift);
 				if(i < b.size()) {
