@@ -12,6 +12,9 @@
     
     to se resi lako tako sto prvo prodjem kroz listu da proverim da li moj broj
     pripada listi
+    
+    takodje moram proveriti da li je x=1, ako jeste onda return false
+    jer inace zabode u vecnoj for petlji na pocetku
 
 */
 #include <bits/stdc++.h>
@@ -64,6 +67,8 @@ bool check(u64 a,u64 k,u64 c,u64 mod){
 
 bool isprime(u64 x){
 
+    if(x==1)return false;
+  
     u64 k=x-1;
     u64 c=0;
     while(k%2==0){
