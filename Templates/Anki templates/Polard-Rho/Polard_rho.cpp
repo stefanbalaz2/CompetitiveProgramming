@@ -4,6 +4,9 @@
 
     obavezno moraju oba da krenu iz istog broja inace mozda se uopste ne nalaze u istom ciklusu
 
+    obavezno prvo uradi miller rabin jer ako je prime veliki i oces da ga faktorises
+    sqrt od tog broja ce biti velik
+
 */
 #include <bits/stdc++.h>
 using namespace std;
