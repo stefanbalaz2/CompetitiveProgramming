@@ -1,6 +1,11 @@
 https://drive.google.com/drive/folders/1z7Xm3yMh_ogFY0j77g6E0G6aoIKd8L45   abstract algebra page 25.
 
+
+done:
 https://codeforces.com/blog/entry/96003
+
+
+todo
 https://codeforces.com/blog/entry/100910
 https://codeforces.com/blog/entry/99646
 https://codeforces.com/blog/entry/77468 generating
