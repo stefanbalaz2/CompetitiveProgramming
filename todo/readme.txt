@@ -33,4 +33,4 @@ https://codeforces.com/gym/102155/problem/B  probabilities
 
 
 
-https://codeforces.com/problemset?order=BY_RATING_ASC&tags=combine-tags-by-or%2Cfft%2Cchinese+remainder+theorem%2Ccombinatorics%2Cmath%2Cmatrices%2Cnumber+theory%2Cprobabilities%2C2600-
+https://codeforces.com/problemset?order=BY_RATING_ASC&tags=combine-tags-by-or%2Cchinese+remainder+theorem%2Cconstructive+algorithms%2Cfft%2Cgames%2Cgreedy%2Cmath%2Cnumber+theory%2Cprobabilities%2C2600-&f0a28=1
