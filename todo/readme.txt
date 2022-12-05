@@ -11,6 +11,7 @@ https://codeforces.com/blog/entry/99646
 https://codeforces.com/blog/entry/77468 generating
 https://codeforces.com/blog/entry/99598
 https://codeforces.com/blog/entry/61306 berlkey massey
+https://codeforces.com/blog/entry/103329 kirchoff
 https://codeforces.com/blog/entry/76447 ode, generator functions
 https://codeforces.com/blog/entry/100279 transposed multi-eval
 
