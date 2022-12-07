@@ -54,8 +54,9 @@ vector<pt> minkowski(vector<pt>a,vector<pt>b){
     while( !(pa==a.size()-2 && pb==b.size()-2) ){
 
         ret.pb(a[pa]+b[pb]);
+        int p2=(b[pb+1]-b[pb]).cross(a[pa+1]-a[pa]);
         if( (a[pa+1]-a[pa]).cross(b[pb+1]-b[pb])>=0)pa++;
-        if( (b[pb+1]-b[pb]).cross(a[pa+1]-a[pa])>=0)pb++;
+        if( p2>=0)pb++;
     }
 
     return ret;
