@@ -1,3 +1,8 @@
+/*
+     ISPRAVI DA PODELIS SA N PRE INVERSE FFT
+
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 #define ff first
