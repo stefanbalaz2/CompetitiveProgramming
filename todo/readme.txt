@@ -4,11 +4,11 @@ https://drive.google.com/drive/folders/1z7Xm3yMh_ogFY0j77g6E0G6aoIKd8L45   abstr
 done:
 https://codeforces.com/blog/entry/96003
 https://codeforces.com/blog/entry/61306 berlkey massey
+https://codeforces.com/blog/entry/99646 translating a polynomial
 
 
 todo
 https://codeforces.com/blog/entry/100910
-https://codeforces.com/blog/entry/99646
 https://codeforces.com/blog/entry/77468 generating
 https://codeforces.com/blog/entry/99598
 https://codeforces.com/blog/entry/103329 kirchoff
