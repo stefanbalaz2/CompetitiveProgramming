@@ -6,12 +6,12 @@ https://codeforces.com/blog/entry/96003
 https://codeforces.com/blog/entry/61306 berlkey massey
 https://codeforces.com/blog/entry/99646 translating a polynomial
 https://codeforces.com/blog/entry/77468 generating
+https://codeforces.com/blog/entry/103329 kirchoff
 
 
 todo
 https://codeforces.com/blog/entry/100910
 https://codeforces.com/blog/entry/99598
-https://codeforces.com/blog/entry/103329 kirchoff
 https://codeforces.com/blog/entry/47764 dp tricks
 https://codeforces.com/blog/entry/76447 ode, generator functions
 https://codeforces.com/blog/entry/100279 transposed multi-eval
