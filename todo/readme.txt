@@ -17,6 +17,7 @@ https://codeforces.com/blog/entry/76447 ode, generator functions
 https://codeforces.com/blog/entry/100279 transposed multi-eval
 https://codeforces.com/blog/entry/94190 network simplex
 https://codeforces.com/blog/entry/110801 probabilities
+https://codeforces.com/blog/entry/110961 greedoid
 
 https://codeforces.com/blog/entry/108395
 https://codeforces.com/blog/entry/98413   generalized mobius inversion on posets
