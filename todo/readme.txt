@@ -10,6 +10,7 @@ https://codeforces.com/blog/entry/103329 kirchoff
 
 
 todo
+https://codeforces.com/blog/entry/100910
 https://codeforces.com/blog/entry/111380
 https://codeforces.com/blog/entry/111399
 https://codeforces.com/blog/entry/91707
