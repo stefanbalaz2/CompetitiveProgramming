@@ -36,6 +36,8 @@ https://en.wikipedia.org/wiki/Partial_fraction_decomposition   Partial_fraction_
 https://codeforces.com/blog/entry/98334   Aliens trick
 minimax theorem
 https://codeforces.com/blog/entry/103979
+https://codeforces.com/blog/entry/110393
+https://bminaiev.github.io/simulated-annealing
 
 https://codeforces.com/contest/1510  E,F,H,I
 https://codeforces.com/gym/102978
