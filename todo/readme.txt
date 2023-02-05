@@ -2,7 +2,7 @@ https://drive.google.com/drive/folders/1z7Xm3yMh_ogFY0j77g6E0G6aoIKd8L45   abstr
 
 
 done:
-https://codeforces.com/blog/entry/96003
+https://codeforces.com/blog/entry/96003 generalized fwht
 https://codeforces.com/blog/entry/61306 berlkey massey
 https://codeforces.com/blog/entry/99646 translating a polynomial
 https://codeforces.com/blog/entry/77468 generating
@@ -10,24 +10,24 @@ https://codeforces.com/blog/entry/103329 kirchoff
 
 
 todo
-https://codeforces.com/blog/entry/111849
-https://codeforces.com/blog/entry/111861
-https://codeforces.com/blog/entry/48417
-https://codeforces.com/blog/entry/100910
-https://codeforces.com/blog/entry/111380
-https://codeforces.com/blog/entry/111399
-https://codeforces.com/blog/entry/91707
-https://codeforces.com/blog/entry/100910
-https://codeforces.com/blog/entry/99598
-https://codeforces.com/blog/entry/47764 dp tricks
-https://codeforces.com/blog/entry/76447 ode, generator functions
-https://codeforces.com/blog/entry/100279 transposed multi-eval
-https://codeforces.com/blog/entry/94190 network simplex
-https://codeforces.com/blog/entry/110801 probabilities
-https://codeforces.com/blog/entry/110961 greedoid
-https://codeforces.com/blog/entry/71097 randomized
+https://codeforces.com/blog/entry/111849    how to prove your solutions
+https://codeforces.com/blog/entry/111861    centroid on graphs with cycles
+https://codeforces.com/blog/entry/48417     general ideas
+https://codeforces.com/blog/entry/100910    collection of little techniques
+https://codeforces.com/blog/entry/111380    variations of string matching
+https://codeforces.com/blog/entry/111399    online fft
+https://codeforces.com/blog/entry/91707     Number theory — Storing information about multiples/divisors
+https://codeforces.com/blog/entry/99598     moment generating functions and q-analogs
+https://codeforces.com/blog/entry/47764     dp tricks
+https://codeforces.com/blog/entry/76447     ode, generator functions
+https://codeforces.com/blog/entry/100279    transposed multi-eval
+https://codeforces.com/blog/entry/94190     network simplex
+https://codeforces.com/blog/entry/110801    probabilities
+https://codeforces.com/blog/entry/110961    greedoid
+https://codeforces.com/blog/entry/71097     randomized
+https://codeforces.com/blog/entry/69287     matroid
 
-https://codeforces.com/blog/entry/108395
+https://codeforces.com/blog/entry/108395  lattice paths
 https://codeforces.com/blog/entry/98413   generalized mobius inversion on posets
 https://codeforces.com/blog/entry/98386   Lagrange interpolation and partial fraction decomposition
 https://codeforces.com/blog/entry/98376   Linear Basis (Xor Basis Extended)
@@ -37,8 +37,8 @@ https://codeforces.com/blog/entry/92306   An interesting algebraic construction
 https://en.wikipedia.org/wiki/Partial_fraction_decomposition   Partial_fraction_decomposition
 https://codeforces.com/blog/entry/98334   Aliens trick
 minimax theorem
-https://codeforces.com/blog/entry/103979
-https://codeforces.com/blog/entry/110393
+https://codeforces.com/blog/entry/103979  combinatorial species, intuition behind GF
+https://codeforces.com/blog/entry/110393  heuristic contest tips
 https://bminaiev.github.io/simulated-annealing
 
 https://codeforces.com/contest/1510  E,F,H,I
