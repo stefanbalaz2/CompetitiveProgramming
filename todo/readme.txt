@@ -10,6 +10,7 @@ https://codeforces.com/blog/entry/103329 kirchoff
 
 
 todo
+https://codeforces.com/blog/entry/113041    petotrator blogs competition
 https://codeforces.com/blog/entry/111849    how to prove your solutions
 https://codeforces.com/blog/entry/111861    centroid on graphs with cycles
 https://codeforces.com/blog/entry/48417     general ideas
