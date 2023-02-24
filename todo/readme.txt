@@ -10,6 +10,9 @@ https://codeforces.com/blog/entry/103329 kirchoff
 
 
 todo
+
+                                            wavelet tree,segtree beats
+https://codeforces.com/blog/entry/17787     wavelet matrix and palindromic tree
 https://codeforces.com/blog/entry/113041    petotrator blogs competition
 https://codeforces.com/blog/entry/111849    how to prove your solutions
 https://codeforces.com/blog/entry/111861    centroid on graphs with cycles
