@@ -10,6 +10,8 @@ https://codeforces.com/blog/entry/103329 kirchoff
 
 
 todo
+https://codeforces.com/blog/entry/49691
+
 
                                             wavelet tree,segtree beats
 https://codeforces.com/blog/entry/17787     wavelet matrix and palindromic tree
