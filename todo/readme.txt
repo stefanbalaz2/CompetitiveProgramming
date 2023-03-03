@@ -11,6 +11,8 @@ https://codeforces.com/blog/entry/103329 kirchoff
 
 todo
 https://codeforces.com/blog/entry/49691
+https://codeforces.com/blog/entry/113465    hashing trees
+https://codeforces.com/blog/entry/61203     mo optimisation
 
 
                                             wavelet tree,segtree beats
