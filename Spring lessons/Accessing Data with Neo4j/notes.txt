@@ -1,0 +1,115 @@
+da pokrenes neo4j server:
+C:\neo4j\neo4j-community-5.5.0\bin\neo4j-admin server console
+otvori se na portu 7687, a na 7474 mozes u browseru da udjes
+da prekines sercer, samo ctrl+c u cmd u kom si otvorio
+
+
+sa annotation @Node iznad klase oznacis da ce to biti nodeovi grafa,
+stavis unutra unique id sa @Id i @GeneratedValue da bi neo4j gledao tajbroj kao unique identifikator
+te klase i da bi ga sam izgenerisao
+moras imati prazan konstruktor
+
+directional relationship ovako deklarises
+@Relationship(type = "TEAMMATE") /// type je samo ime veze
+public Set<Person> teammates;
+svi edgovi su directed, ALI ISKLJUCIVO DIRECTED, ali mozemo da postavljamo kverije koji ih gledaju kao undirected
+I OBAVEZNO MORA teammates DA se pazljivo menja
+
+
+Neo4jRepository<Person, String> nasledjuje CrudRepository i omogucava nam klasicne crud operacije i od neo4j
+prvi generic parametar oznacava tip podataka od nodea u grafu, a drugi parametar predstavlja unique id po kome
+se identifikuju nodeovi i obicno to bude Neo4jRepository<Person, Long>
+to znaci da atribut u klasi Person sa anotacijom @Id ce da predstavlja taj identifikator
+
+public interface PersonRepository extends Neo4jRepository<Person, Long> {
+
+  Person findByName(String name);
+  List<Person> findByTeammatesName(String name);
+}
+ovako mozemo extendovati da napravimo repo sa svojim kverijima
+na startupu, spring ce skenirati fajlove trazeci interfejse Neo4jRepositorije i instancirati ih u beanove
+koje posle mozemo da koristimo
+takodje, postoji konvencije za pisanje ovih interfejsova tako da kad ih pises, Spring Neo4j sam izgenerise
+kverije koje zelis, moramo da stavimo anotaciju @EnableNeo4jRepositories da bi spring skenirao repositorije
+
+
+posto za komunikaciju Springa sa serverom moramo da se authentikujemo, dodajemo u application.properties:
+spring.neo4j.uri=bolt://localhost:7687
+spring.neo4j.authentication.username=neo4j
+spring.neo4j.authentication.password=secret55
+
+uri je Unique Resource Identifier, URL(Unique Resource Location) i URN su podtipovi od URI
+
+
+Spring Boot automatically handles those repositories as long as they are included in the same package
+ (or a sub-package) of your @SpringBootApplication class. For more control over the registration process,
+ you can use the @EnableNeo4jRepositories annotation.
+By default, @EnableNeo4jRepositories scans the current package for any interfaces that extend
+ one of Spring Data’s repository interfaces. You can use its basePackageClasses=MyRepository.class
+ to safely tell Spring Data Neo4j to scan a different root package by type if your project layout
+ has multiple projects and it does not find your repositories.
+
+
+da se ne smaramo sa konvencijama gore, ovako bismo zapravo pisali kveri interfejs
+public interface UserRepository extends Neo4jRepository<User, Long> {
+
+    @Query("MATCH (u:User) WHERE u.name = $name RETURN u")
+    User findByName(@Param("name") String name);
+
+    @Query("MATCH (u:User)-[:TEAMMATE]-(v:User) WHERE u.name=$name return COLLECT(v)")
+    Set<User> findNeighbours(@Param("name") String name);
+
+}
+$name oznacava da je to labela name, i tu cemo ubaciti parametar koji ima @Param("name") pored sebe
+(u:User) oznacava da cemo za varijablu u da uzmemo sve nodeove cija je labela User, zato da bismo mogli
+pristupati atributima od User klase(sa neo4j strane su u pitanju JSON fajlovi), popout npr u.name
+RETURN u zapravo returnuje JSON od u, ali takodje mozemo i posebne atribute da returnujemo
+
+
+ako hocemo da matchujemo edgeve samo u odredjenom smeru onda:
+MATCH (n:Person)-[:RELATIONSHIP_TYPE]->(m)
+ako ocemo da matchujemo biirectional edgeve onda:
+MATCH (n:Person)-[:RELATIONSHIP_TYPE]-(m)
+
+
+kada pravimo nodeove, mi prvo napravimo instance tih klasi u javi, nakon cega moramo da ih ubacimo u repository koji zelimo
+samo repo.save(moj_node); gde ta klasa mora imati @Node zato sto ce se prilikom dodavanja u repo razresiti te anotacije i 
+convertovati ta klasa iz klase u neo4j node
+
+kada ocemo da menjamo neki node, njegove susede, itd, moramo prvo da ga getujemo iz neo4j DB sa funkcijom naseg interfejsa,
+nakon toga, napravimo izmene koje zelimo, pa onda uradimo .save() za taj node
+tako smo uradili update na bazi
+
+u tim objektima koje njakamo cemo odrzavati nase directed edgeve, moramo jako da pazimo da slucajno ne bude da smo getovali listu suseda
+nekog nodea tako sto smo bidirectional edgove uzeli, onda nece validna biti lista suseda i .save() tog nodea ce da corruptuje bazu
+
+u bazu kad shuknes neku instancu klase, taj node poprimi label "ImeKlase", a atributi klase se mapiraju u "properties"
+{
+  "identity": 1,
+  "labels": [
+    "Person"
+  ],
+  "properties": {
+    "name": "Roy"
+  },
+  "elementId": "1"
+}
+ovako se cuvaju u bazi nodeovi, kao sto mozemo da vidimo, Set<Person> teammates; koji je annotated sa @Relationship
+se nece cuvati u bazi u JSON od nodea, nego da bismo napisali nas kveri koji getuje ceo node, moramo i taj set teammates
+da ukljucimo u kveri pored naseg nodea, a to je tako zato sto se relationshipovi u neo4j grafu cuvaju posebno od nodeova,
+u prevodu, da smo imali neku listu u klasi, ona bi se sacuvala u JSON od nodea u neo4j, ali sve sto je annotated sa 
+@Relationship ce se cuvati kao relationship posebno u neo4j
+
+
+na kraju, da bismo zapravo getovali neki node zajedno sa svojom listom suseda, moramo da prvo getujemo taj node, tj njegov JSON,
+koji cemo dobiti bez svih @Relationship atributa, a onda moramo posebno i te atribute da formiramo, mozemo to uraditi koristeci 
+gore napisane kverije da izvucemo sve potrebne susede
+
+
+@Node("SomeInterface") nacin da renameujemo label koji ce klasa da ima u bazi
+
+
+OPTIONAL MATCH matches patterns against a graph database, just as MATCH does. 
+The difference is that if no matches are found, OPTIONAL MATCH will use a null
+ for missing parts of the pattern. OPTIONAL MATCH could therefore be considered 
+the Cypher equivalent of the outer join in SQL.

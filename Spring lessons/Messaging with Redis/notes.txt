@@ -1,0 +1,54 @@
+skinemo prvo ubuntu terminal
+instaliramo redis
+
+da pokrenemo server redisa
+sudo service redis-server start
+
+da otvorimo vezu terminiala sa redis NoSQL bazom:
+redis-cli
+
+onda mozemo da pisemo upite, mozemo npr da posaljemo ping
+i ako server radi on vrati PONG
+
+takodje kad uradimo redis-cli pise nam na kom IP:PORT se nalazi redis
+
+gasis redis sa redis-cli shutdown
+
+
+
+Redis messaging funkcionise tako sto cemo imati razne chanelle na koje cemo da sendujemo poruke
+i svaka klasa koja je subscribovana na chanell X, onda ce da primi sve poruke koje se posalju na chanell X
+
+poruke koje se salju su stringovi, mozda moze biti i nesto drugo, nisam proverio
+// Configure the RedisTemplate with a JSON serializer
+RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+redisTemplate.setKeySerializer(new StringRedisSerializer());
+redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+moze ako dekraliresmo serijalizaciju
+
+
+klasu koje recievuje cemo da definisemo najnormalnije, i imacemo neku funkciju proizvoljnog imena koja ce da
+primi String koji ce biti poruka
+
+da bismo mogli da ostvarimo komunikaciju preko redisa trebace nam:
+	-connection factory(to ce biti springov bean koji ce spring redis sam da kreira)
+	-container listenera, za svaki channel cemo imati container listenera kome ce biti dodeljen connection factory
+	-redis template kojim cemo da publishujemo poruke
+
+
+ApplicationContext ctx = SpringApplication.run(MessagingRedisApplication.class, args);
+StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
+Receiver receiver = ctx.getBean(Receiver.class);
+ovako getujemo beanove lako
+
+da bismo nasu klasu X mogli ubaciti u containter listenera, moramo ga prvo pretvoriti u ListenerAdapter
+tako sto u konsturktor listener adaptera posaljemo instancu klase koju zelimo, i string ime funkcije na koju ce
+ta klasa da prima poruku
+
+taj listeneradapter cemo sad da ubacimo u listener container od zeljenog kanala
+
+poruke saljemo sa redistemplate direktno na ime chanella
+
+
+RedisConnectionFactory po defaultu kad se taj bean na startup napravi, on slusa na localhost:6379, tj sa tom bazom
+je povezan

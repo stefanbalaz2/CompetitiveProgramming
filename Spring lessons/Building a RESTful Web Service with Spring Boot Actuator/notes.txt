@@ -1,0 +1,20 @@
+runuje server, exposeuje neke endpointe odma, tipa /actuator/health
+
+curl localhost:8080/hello-world?name=opa
+ovako se parametri prosledjuju
+
+server.port: 9000
+management.server.port: 9001
+management.server.address: 127.0.0.1
+
+ovim server http requestove stavljas na 9000
+a /actuator/health i taj management stavljas na 9001
+
+
+
+$ curl localhost:8080/hello-world
+curl: (52) Empty reply from server
+$ curl localhost:9000/hello-world
+{"id":1,"content":"Hello, Stranger!"}
+$ curl localhost:9001/actuator/health
+{"status":"UP"}

@@ -1,0 +1,11 @@
+JDBC, Java DataBase Connectivity API definise nacin na koji mozemo da
+kveriujemo bazu
+
+podigli smo usput H2 bazu
+
+@Autowired
+JdbcTemplate jdbcTemplate;
+
+ovako smo injectovali bean koji vec postoji u trenutnu klasu
+
+samo pisemo kverije kroz metode iz jdbcTemplate

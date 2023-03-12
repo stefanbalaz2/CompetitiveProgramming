@@ -1,0 +1,64 @@
+The @SpringBootTest annotation tells Spring Boot to look for a main configuration class (one with @SpringBootApplication, for instance) and use that to start a Spring application context. You can run this test in your IDE or on the command line (by running ./mvnw test or ./gradlew test), and it should pass
+
+@SpringBootTest
+public class TestingWebApplicationTests {
+
+ @Test
+ public void contextLoads() {
+ }
+
+}
+}
+
+When you run your tests using a tool like Maven or Gradle, the Spring Test framework will automatically detect and run any methods annotated with @Test. You can also run your tests directly from your IDE by selecting the test class and choosing "Run as JUnit test" from the context menu.
+
+Obicno se sa assertovima testira
+
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+public class HttpRequestTest {
+
+ @Value(value="${local.server.port}")
+ private int port;
+
+ @Autowired
+ private TestRestTemplate restTemplate;
+
+ @Test
+ public void greetingShouldReturnDefaultMessage() throws Exception {
+  assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/",
+    String.class)).contains("Hello, World");
+ }
+}
+
+Znaci, @SpringBootTest oznacava da ce da se pokrene novi application context, webenviroment randomport ce da nam osigura da originalni context i context za testiranje nece da clashuju sa portovima, znaci, imamo 2 contexta, jedan na random portu, drugi na regular portu, cela applikacija je startovana na oba porta, i tacno simuliramo eksternog klijenta kako pristupa nasem backendu i testiramo
+TestRestTemplate koristimo za pozive backendu itd
+Assertujemo da li backend odgovara kako ocekujemo
+
+Znaci, za svaku klasi koju ocemo da testiramo stavimo tu anotaciju, i bice kreiran kompletan app context za svaku od tih klasa koje su tako anotirane, znaci ako imam 3 takve klase, imamo ukupno 4 app contexta
+Tokom testiranja svi contexti pristupaju main contextu i moze se dogoditi da medjusobne izmene razlicitih contexta nad main contextom uticu jedni na druge
+To se resava nekim nacinom izolazije testova, ili valjda resetovanjem podataka nakon svakog testa
+Mozda moze i da se definuje neki order testiranja tih klasa
+
+Mozemo da defineujemo order @Test funkcija unutar konteksta uz pomoc @Order
+Mozemo takodje da ubrzamo testiranje tako sto specifajujrmo @ContextConfiguration da vidimo sta cemo da shareujemo izmedju contexta
+
+Ovaj nacin ce setupovati server
+Da bismo izbegli to vreme setapa servera, mozemo mockovati te konfoguracije sa springmvc i dodavanjem anotacije za tu kofiguraciju
+@SpringBootTest
+@AutoConfigureMockMvc
+public class TestingWebApplicationTest {
+
+ @Autowired
+ private MockMvc mockMvc;
+
+ @Test
+ public void shouldReturnDefaultMessage() throws Exception {
+  this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
+    .andExpect(content().string(containsString("Hello, World")));
+ }
+}
+
+Mozemo takodje ako nam samo web layer treba, da jos vise suzimo sa @WebMvcTest
+U ovom slucaju samo web layer instantiatuje umesto celog contexta
+
+Nisam pohvatao, ali nekad nam treba @MockBean

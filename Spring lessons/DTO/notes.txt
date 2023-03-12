@@ -1,0 +1,16 @@
+DTO, data to object, ili je ipak data transfer object?
+u sustini, posto kada saljemo objekte u bazi i primamo iz baze, ne zelimo nekada da primimo ceo objekat, npr
+nebitan nam je Id u objektu koji dobijemo iz baze, deklarisacemo klase sa njihovim atributima koje
+zapravo zelimo da imaju, znaci za jedan objekat za bazu koji smo deklarisali, mi mozemo imati vise
+ovih novih napravljenih klasa,zvacemo ih P klase
+znaci,za svaki format klase koji zelimo da primamo iz baze napravimo njegovu P klasu
+i takodje posebno od toga napravimo mapere, koji mapiraju iz klase u P klasu i obrnuto
+
+onda definisemo sve repositorije
+
+onda napravimo interfejse za sta cemo sve moci sa podacima da radimo
+i onda posebno njihove implementacije, njih mozemo obeleziti sa @Service
+fora je onda, u servisima cemo zapravo da radimo one DTO stvari itd, pozivajuci
+kverije iz repositorija
+
+response entiti je zapravo kompletan http request, i mi time mozemo da lakse regulisemo header, body,return code

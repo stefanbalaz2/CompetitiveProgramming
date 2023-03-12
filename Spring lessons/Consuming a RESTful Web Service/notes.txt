@@ -1,0 +1,72 @@
+
+ovde je bio cilj da naucimo da komuniciramo i da primamo podatke iz RESTService nekog
+spoljasnjeg
+
+The RestTemplate is a Spring class that provides a simple way to make HTTP requests to 
+remote services, and supports a variety of HTTP methods and message converters.
+
+instance commandLineRunner klase ce Spring uvek pri pocetku programa da pozove run()
+a da bismo mi na pocetku programa imali instancirane sve nase zeljene commandlinerunner klase
+mozemo to da resimo tako sto ih anotiramo sa @Bean
+
+
+prilikom slanja http zahteva sa JSON kao data, mozemo lakse da objekte serijalizujemo
+i deserijalizujemo u/iz JSON
+
+@JsonIgnoreProperties({ "password", "creditCardNumber" })
+public class User {
+    private String username;
+    private String password;
+    private String email;
+    private String creditCardNumber;
+
+    // getters and setters
+}
+
+ovaj kod oznacava da ce prilikom serijalizacij i deserijalizacije da se samo
+uzmu u obzir atributi password i creditCardNumber
+
+@JsonIgnoreProperties(ignoreUnknown = true) is a Jackson annotation in
+Java used to ignore any unknown properties found in a JSON object during deserialization.
+When a JSON object is deserialized into a Java object, Jackson will try to map the
+ JSON properties to the corresponding fields or setter methods in the Java object. 
+If a JSON property does not match any fields or setters in the Java object, Jackson
+ will throw an exception by default.
+
+
+@Bean
+public RestTemplate restTemplate(RestTemplateBuilder builder) {
+	return builder.build();
+}
+ovako bismo napravili jedan RestTemplate instancu
+
+@Bean
+public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
+	return args -> {
+		Quote quote = restTemplate.getForObject(
+				"http://localhost:8080/api/random", Quote.class);
+		log.info(quote.toString());
+	};
+}
+a ovako bismo je koristili, getujemo objekat sa adrese, i primimo ga kao Quote.class
+nacin kako cemo da primimo quote class je tako sto ce da prodje kroz one JSON transformacije koje smo
+naveli gore
+
+napomena: 
+public CommandLineRunner run(RestTemplate restTemplate)
+public RestTemplate restTemplate(RestTemplateBuilder builder)
+u ovim linijama se dogodio injection beanova, Spring je samo potrazio koji bean je tip RestTemplateBuilder
+i dao to kao argument u funkciju, takodje je onda potrazio koji bean je tipa RestTemplate i njega je onda
+isto poslao u funkciju
+
+
+ovaj deo se odnosi na komunikaciju izmedju udaljenog servira od kojeg trazimo JSON i naseg programa
+da bismo mogli lako kao u gornjem primeru da mapiramo dobijeni JSON u Quote.class, Spring mora da zna
+kako da atribute u JSON mapira na Quote.class, a to ce automatski uraditi kako treba ako nam
+atributi u Quote imaju ista imena kao atributi u JSON koji cemo primiti, u suprotnom moramo 
+da se pozabavimo drugacije malo
+To directly bind your data to your custom types, you need to specify the variable name
+ to be exactly the same as the key in the JSON document returned from the API. In case your
+ variable name and key in JSON doc do not match, you can use @JsonProperty annotation to 
+specify the exact key of the JSON document. (This example matches each variable name to a 
+JSON key, so you do not need that annotation here.)

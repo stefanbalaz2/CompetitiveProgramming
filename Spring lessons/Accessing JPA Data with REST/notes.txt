@@ -1,0 +1,21 @@
+@RepositoryRestResource(collectionResourceRel = "people", path = "people")
+public interface PersonRepository extends PagingAndSortingRepository<Person, Long>, CrudRepository<Person,Long> {
+
+  List<Person> findByLastName(@Param("name") String name);
+
+}
+
+PagingAndSortingRepository provides methods for retrieving a list of entities sorted and/or paginated, while CrudRepository
+ provides methods for basic CRUD (Create, Read, Update, Delete) operations on entities.
+
+The @RepositoryRestResource annotation is used to expose the repository as a RESTful web service. 
+The collectionResourceRel attribute sets the name of the collection of entities exposed by the RESTful service,
+ and the path attribute sets the base URI path for the resource.
+
+In this example, the repository provides a single custom method, findByLastName, which is used to retrieve a 
+list of Person entities by their last name. The @Param annotation is used to specify the name of the query 
+parameter to be used to pass the value of the name argument.
+
+ovako si direktno exposeovao repository kao RESTful service, i mozemo da upite pravimo preko http zahteva
+
+tj, backend ima servis repository koji komunicira sa bazom

@@ -1,0 +1,18 @@
+JPA - java persistance API
+
+to je API za pravljenje, pristupanje tabularnim podacima u DB, tj relacionim DB
+
+@Entity nam oznacava entry u tabeli
+svaka @Entity klasa mora imati svoj @Id po kojem se identifikuje jedinstveno
+obicno to stavimo da bude generisano @GeneratedValue(strategy=GenerationType.AUTO)
+onda se assumuje da se taj entity mapira na table sa imenom te klase
+
+na slicnu foru ovo izgleda kao i kod neo4j
+
+mora entity da ima prazan constructor
+
+isto kao i kod neo4j, mozes da nasledis CrudRepository<Person,Long> sto govori da je entry
+klasa person, a id je tip Long
+isto definises metode za kveriovanje, takodje, instancira se repository od tvog interfejsa
+koji mozes da koristis kao bean
+

@@ -1,0 +1,59 @@
+@Configuration klase isto se kreiraju kao beanovi, tj oni i jesu beanovi, isto ono, instanciraju se pri startupu
+pozivom na konstruktor, i idu u IoC, i isto im pristupas kao beanovi
+
+kada stavis neku klasu kao argument, ili da je instanciras, ciji bean imas u Ioc
+on ce sam da ubaci odgovarajuci bean ako moze, tj ako ima jedan jedini takav bean tog tipa
+ako nema, onda sranje
+
+
+Uh coco;
+public HelloWorld(Uh coco){
+    this.coco=coco;
+}
+ovo moze(Uh bean je ranije napravljen)
+
+ali iz nekog razloga ovo ne moze:
+
+@AutoWired
+Uh coco;
+public HelloWorld(){
+}
+ovo mi je vrv vracalo null jer se instanciralo pre neg osto je Uh bilo deklarisano kao bean
+
+
+kada ima vise beanova neke klase, recimo klase Uh, a mi hocemo negde da pozovemo 
+neku varijablu klase Uh, bacice error jer ne zna koji od ta 2 beana da uzme
+da bismo dali njemu do znanja koji bean da uzme, stavimo @Qualifier("jbg") recimo
+kao anotaciju beana koji pravimo, a onda da bismo ga negde drugde pozvali, 
+pre parametra stavimo isto @Qualifier("jbg"), nesto poput @Qualifier("jbg") Uh coco
+
+
+@Component
+public class MyComponent {
+    @Autowired(required=false)
+    private MyDependency myDependency;
+}
+In this example, MyComponent has a field myDependency that is annotated with @Autowired and
+ the required attribute is set to false. This tells Spring that myDependency 
+is an optional dependency, and if a matching bean is not found, the field will be
+ set to null instead of throwing an exception.
+
+izgleda da nece da radi
+@Autowired
+Uh uhBean;
+cak ni sa qualifierom, UPDATE: hoce da radi, samo mora da bude pre tog poziva vec deklarisan bean
+mislim da ovo ne radi, zato sto @Autowired izgleda samo naznaci da ovo zelimo da se izvrsi pri obavezno "sto pre",
+tj kako da kazemo, sto pre izvrsi i stavi u Ioc, a ovde dodje i nema sta da izvrsi
+
+
+takodje,
+@Autowired
+public void configfewure(){
+    System.out.println("KONFIGU");
+}
+@Autowired iznad funkcije radi ono sto smo rekli u proslom pasusu, izgleda da wireuje sa ostatkom, recimo
+ova funkcija se nalazi u nekoj klasi, svaki put kada se ta klasa instancira kao bean
+ISKLJUCIVO KAO BEAN, ova funkcija ce se pozvati, 
+ovo je kao da smo dali dependency da kad god udjemo u scope ove funkcije kad zelimo da bude bean
+moramo da izvrsimo tu funkciju
+

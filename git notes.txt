@@ -1,0 +1,155 @@
+ls -a
+ovo je zapravo ls -all,znaci i hidden
+
+poresavam svoj editor, ime intelij je idea64
+
+da napravim lokalno repo:
+dok sam u directory uradim
+git init
+
+kada ocu da pushujem nesto na dalje na repo, prvo ima staging deo, gde je belezim koje promene ocu da pushujem
+mogu da neke obelezeim a neke i ne
+
+kada commitujes, ne isprazni se staging area
+
+da dodas u stage area
+git add file1
+
+da commitujes:
+git commit -m "your_message"
+
+kada onda recimo editurjes file1, moras ponovo da dodas u stage,jer se njegove promene nisu dodale
+
+ako onda recimo obrisemo fajl2 iz naseg foldera, on je i dalje u stage area, da bismo ga i tu updateovali
+ponovo uradimo git add file2
+u sustini git add samo updateuje upamceno stanje u stageu u trenutno stanje fajla u folderu
+
+git status
+daje mi untracked fajlove, crveni fajlovi nisu ubaceni u staging area
+
+git commit -m "mymessage"
+ako ne stavim -m parametar, on ce otvoriti da napisem message u mom izabranom editoru, onda pises u prvu liniju naslov,
+pa prazna linija, pa onda description
+
+sa git commit -a zapravo comitujemo sve
+
+ako renamujemo, moramo da git addujemo oba fajla, tj da oba namea updateujemo status
+
+
+.gitignore sadrzi lokacije kojih fajlova ne zelimo da pushujemo, tj zelimo da ignorisemo,
+samo dodamo te rute u .gitignore
+on funkcionise izgleda tako sto se potrudi da ne stavimo te fajlove u staging area prilikom git addovanja
+sto znaci da ako se fajl vec nalazio u staging area pre nego sto smo ga stavili u .gitignore, moramo ga prvo izbaciti iz staging area
+
+staging area se takodje zove index
+ako zelimo da izbacimo fajl iz samo iz indexa, bez removovanja fajla, stavimo git rm --cached "fajl"
+
+za razne programske jezike imas vec templateove sta treba ubaciti u .gitignore da ne gleda ono sto ne treba
+
+git restore "filename" sluzi da iz indexa vratimo nazad changeove, restoruje nazad do proslog commita taj stage
+
+discardujemo local promene tako sto git restore
+
+git log --oneline da dobijemo info o commitovima
+
+da restorujes fajl iz ranijeg commita:
+git restore --source=HEAD~1 "filename"
+HEAD~1 kaze: commit pretposlednji
+ovako si dobio untracked file, i moramo ga izgleda addovati i commitovati
+
+
+git branch pravimo sa:
+git branch "branchname"
+
+sa git branch dobijemo listu branchova
+
+menjamo trenutnu granu sa:
+git switch "imegrane"
+
+sa git branch -d "branchname"
+sa velikim -D ako oces da forsujes delete
+brisemo branch
+
+
+da cloneujemo neciji git repo koji se nalazi na /home/alice/sun u folder kod nas koji nazovemo mysun:
+git clone /home/alice/sun mysun
+i sad imamo svoj nezavisan git repo cloniran
+
+ako smo klonirali, onda je izgleda origin/master zapravo branch master iz origina, gde je origin git repo iz kog smo klonirali
+alice onda povuce moje promene tako sto 
+git pull /home/bob/myrepo master
+ovo kaze da ce da merguje bobov master sa alice trenutnim branchom
+
+
+
+git remote add bob /home/bob/myrepo
+dodajte remote git repo koja se nalazi na /home/bob/myrepo,  i naziva je bob, dodaje je u trenutni local git repo,
+tj moram biti u folderu koji je git repo kad ovo radim, ovo je kao da smo connectovali onaj remote repo sa nasim lokalnim,
+kad to uradimo, trazice vrv da pullujemo,  nakon cega cemo tek moci da pravimo changes, pushujemo commitove
+znaci, ova komanda samo doda, da kazemo, refference,ime, na neki remote repo, pa onda mozemo zapravo da ovako definisemo
+vise remote repo
+
+kad ovo uradimo, mozemo da git pull bob, da dobijemo njegov repo ovde lokalno, pa onda mozemo da 
+git push bob/main sto pushuje nase lokalne promene na nasem trenutnom branchu na main granu boba
+mozemo da pullujemo i neki odredjeni branch sa boba tako sto
+git fetch bob grana_1
+Note that this command only fetches the changes from the specified branch, not any other branches on the remote repository
+mozemo da pushujemo nase izmene
+ili mozemo da mergujemo bob/grana_1 u nasu lokalnu granu sa
+git merge bob/grana_1
+ovo merguje izabranu granu u trenutnu selectovanu granu
+da bismo ove changeove onda 
+When you run git pull, it actually runs two commands in sequence: git fetch followed by git merge. 
+The git fetch command downloads the latest changes from the remote repository, and the git merge
+ command merges those changes into your local branch.
+
+u sustini, git remote add samo dodeli ime nekom repou
+a mi zapravo mozemo direktno kad god ocemo da fetchujemo, mergujemo u trenutni branch/repo, takodje i da pushujemo
+
+if you use git pull to pull an entire repository into your local Git repository, Git will download all 
+of the objects and branches from the remote repository and merge them into your current local branch.
+In general, it's usually a better practice to only pull the branches that you need from the remote repository,
+ rather than pulling the entire repository. This can help minimize the chances of conflicts and can also save time and bandwidth.
+
+git push <remote> <branch>
+ovako pushujemo trenutni selectovani branch na remote repo na njegov branch
+
+
+commit zapravo sacuva na lokalnom gitu promene,
+a push to uradi na remote git repo
+
+git config -l
+da dobijemo konfiguracije
+
+git branch <ime grane> <identifikacija commita>
+pravibranch sa odredjenim imenom, granajuci se od datog commita
+
+znaci, kada nesto radim, napravim svoj branch, pullujem sve sto mi treba sa main brancha ili samo inicijalno napravim
+svoj branch od poslednjeg commita na mainu
+onda periodicno pullujem main branch u moj branch dok radim da bih cisto bio redovno up to date
+i na kraju kad hocu, pushujem moj branch u main
+
+
+
+git reset --hard HEAD~3 # reset your current branch and working
+			 # directory to its state at HEAD~3
+tj 3 komita u nazad roll backujes, mozes isto da tu stavis tacan id od commita
+git reset --soft ce da roll backuje na zeljeni commit, ali changes napravljene tokom rollbackovanih commitova
+ce se sacuvati/staviti u staging area
+
+Be careful with that last command: in addition to losing any changes in the working directory, 
+it will also remove all later commits from this branch. If this branch is the only branch containing
+ those commits, they will be lost. Also, don’t use git reset on a publicly-visible branch that other
+ developers pull from, as it will force needless merges on other developers to clean up the history
+
+If you need to undo changes that you have pushed, use git revert instead.
+
+
+echo text > fajl
+napise text u fajl
+ako stavimo >> onda appendujemo
+
+
+git push -u <remote_branch>
+-u or --set-upstream is an option that tells Git to set up tracking information between
+ the local and remote branches, so that future git push or git pull commands can be used without specifying the remote branch.

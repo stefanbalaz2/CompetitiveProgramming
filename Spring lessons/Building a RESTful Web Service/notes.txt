@@ -1,0 +1,17 @@
+Java record class je samo novi nacin pisanja klase, u slucaju da klasa
+treba da nam samo storuje data, to izgleda poput 
+	public record Greeting(long id, String content) { }
+
+sto se tice controllera(klasa koje treba da mapiraju, hendluju endpointe)
+imamo RestController i Controller, njihova glavna razlika je sto, osim sto oba prime http zahteve
+i vrate http, u delu sa podacima Controller sluzi da returnuje obicno HTML view, tako nesto,
+a Restcontroller sluzi da returnuje podatke, obicno u obliku JSON, u sustini, kad returnujemo objekat
+iz RestControllera, on se convertuje u JSON pa se upise u HTTP zahtev, koji se posalje kao response
+
+public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name)
+parametar izvlacis tako sto ispred parametra napises ovu anotaciju
+
+The Greeting object must be converted to JSON. Thanks to Spring’s HTTP message converter support, 
+you need not do this conversion manually. Because Jackson 2 is on the classpath, 
+Spring’s MappingJackson2HttpMessageConverter is automatically chosen to convert the Greeting instance to JSON.
+

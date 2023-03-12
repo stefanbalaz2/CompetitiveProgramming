@@ -1,0 +1,6 @@
+MongoDB je NoSQL, storuje podatle kao JSON fajlove
+
+pokrenes ovo za dignes bazu
+"C:\Program Files\MongoDB\Server\6.0\bin\mongod.exe"
+
+rradi se bukvalno na isti nacin ko i ostale baze

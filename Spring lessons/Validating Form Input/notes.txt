@@ -1,0 +1,67 @@
+@NotNull
+	@Size(min=2, max=30)
+	private String name;
+
+	@NotNull
+	@Min(18)
+	private Integer age;
+
+neki od constraintova, ako se neki ne ispuni, baca se validation exception, ali samo kad se pozoove
+@Valid na instancu objekta
+
+
+@Controller
+public class WebController implements WebMvcConfigurer {
+
+	@Override
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/results").setViewName("results");
+	}
+
+	@GetMapping("/")
+	public String showForm(PersonForm personForm) {
+		return "form";
+	}
+
+	@PostMapping("/")
+	public String checkPersonInfo(@Valid PersonForm personForm, BindingResult bindingResult) {
+
+		if (bindingResult.hasErrors()) {
+			return "form";
+		}
+
+		return "redirect:/results";
+	}
+}
+
+prva funkcija nam dodaje novi view controller na adresu /results, i njen view name je results
+druga funkcija mora da primi PersonForm jer time sto to primi, binduje taj objekat za html koji ce da popunjava 
+atribute tog objekta, i onda ce se taj objekat poslati u trecu funkciju na validaciju
+u drugoj fuinkciji returnujemo ime html viewa koji cemo prikazati za "/" adresu
+za Post request za adresu / ce se dobiti popunjen PersonForm
+
+The @Valid annotation on the PersonForm parameter in the checkPersonInfo method tells Spring MVC 
+to validate the PersonForm object using the validation constraints specified on its properties 
+(i.e., @NotNull, @Size, @Min). If any validation errors occur, Spring MVC will add them to the 
+BindingResult object passed to the method.
+
+The BindingResult object contains information about the binding and validation errors that
+ occurred during the form submission. It provides methods to check if any errors occurred
+ (hasErrors()), get a list of all errors (getAllErrors()), or get errors for a specific field (getFieldErrors()).
+
+@Valid znaci validira samo kada se pozove za neki objekat, takodje nije rekurzivan, tj ako imam neke druge objekte
+koje ocu validirane unutar mog objekta, moram ih rucno validirati, takodje, on ce znati da u koji bindingresult da stavi
+rezultate validacije
+
+You can also customize the validation behavior by creating a custom validator and configuring Spring
+ MVC to use it instead of the default validator. To do this, you would define a bean of type Validator
+ in your application context and annotate it with @Bean and @Primary. Spring MVC will then use your 
+custom validator instead of the default one.
+
+
+
+When you use @Valid to validate a bean or method argument, Spring will automatically create
+ an instance of BindingResult to store the results of the validation. You can then access this
+ instance in your controller method by declaring a parameter of type BindingResult alongside the validated object.
+. To access the BindingResult object, you must declare a parameter of type BindingResult immediately
+ after the validated object in your controller method.

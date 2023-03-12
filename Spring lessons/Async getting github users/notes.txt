@@ -1,0 +1,45 @@
+RestTemplate bean koristimo da pozovemo endpointe koje god i da konvertujemo rezultat u objekat
+
+@Async
+  public CompletableFuture<User> findUser(String user) throws InterruptedException {
+    logger.info("Looking up " + user);
+    String url = String.format("https://api.github.com/users/%s", user);
+    User results = restTemplate.getForObject(url, User.class);
+    // Artificial delay of 1s for demonstration purposes
+    Thread.sleep(1000L);
+    return CompletableFuture.completedFuture(results);
+  }
+moramo da returnujemo CompletableFuture da bismo mogli interagovati sa rezultatom funkcije, ako hocemo da funkcija 
+ne returnuje nista, mozemo isto da stavimo samo void
+
+@Async nam kaze da se ta funkcija treba u posebnom threadu odraditi, tj asynchronous, ako sklonimo async,
+onda ce se izvrsiti synchronously
+@EnableAsync nam omogucava async u nasem app
+
+@Bean
+  public Executor taskExecutor() {
+    ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+    executor.setCorePoolSize(2);
+    executor.setMaxPoolSize(2);
+    executor.setQueueCapacity(500);
+    executor.setThreadNamePrefix("GithubLookup-");// ovo samo imena threadova postavlja radi identifikacije
+    executor.initialize();
+    return executor;
+  }
+moramo isto napraviti executor bean za threadpool da bi uopste i moglo da bude async, ovo u springu funkcionise,
+ovaj bean ce svi async funkcije da koriste da se izvrse
+izgleda da ne mora obavezno da se ovo napravi, jer ce Spring napraviti svoj default thread pool, ali je bolje ovako,
+da mi sami konfigurisemo
+
+
+CompletableFuture<User> page1 = gitHubLookupService.findUser("PivotalSoftware");
+    CompletableFuture<User> page2 = gitHubLookupService.findUser("CloudFoundry");
+    CompletableFuture<User> page3 = gitHubLookupService.findUser("Spring-Projects");
+
+    // Wait until they are all done
+    CompletableFuture.allOf(page1,page2,page3).join();
+
+ovako se pozivaju i joinuju threadovi
+
+
+

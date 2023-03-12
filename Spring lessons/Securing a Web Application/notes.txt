@@ -1,0 +1,85 @@
+znaci, web app mozemo baseovati na Spring MVC, pa cemo onda morati konfigurisati Spring MVC
+i postaviti view controllere da exposujemo html templateove koje napravimo
+
+te viewove cemo postaviti tako sto implementujemo interface WebMvcConfigurer
+i overrideujemo addViewControllers(ViewControllerRegistry registry) tako sto poubacujemo u 
+registry endpointe uparene sa viewima
+
+moramo da stavimo @EnableWebSecurity da bismo ukljucili osnovni spring security
+
+http.authorizeHttpRequests((requests) -> requests
+            .antMatchers("/admin/**").hasRole("ADMIN")
+            .antMatchers("/user/**").hasRole("USER")
+            .anyRequest().authenticated()
+);
+
+ovako mozemo configurovati, antMatcher znaci da /admin/** gde su zvezdice bilo sta, mora da ima role ADMIN
+onda /user/** mora biti USER
+a svi ostali moraju da budu authenticated
+
+imas isto i .requestMatchers("/","/home") koji kaze da mora tacno neki od tih da bude
+imamo isto .permitAll()
+
+znaci da bi mapirao autorizaciju na endpointe, ovako kao gore uradis
+
+.formLogin((form) -> form
+	.loginPage("/login")
+	.permitAll()
+)
+ovaj chain, form parametar je zapravo LoginFormConfigurer, podesimo endpoint za login page, i za njega
+damo permisije svima
+
+.logout((logout) -> logout.permitAll());
+ovde mozemo podesiti i logout endpoint i permisije za njega
+
+
+ovako izgleda flow securitychain authentifikacije i autorizacije
+When a user tries to access a secured endpoint in a Spring MVC application, 
+the SecurityFilterChain configured in WebSecurityConfig intercepts the request 
+and performs authentication and authorization checks before allowing the request to proceed.
+
+Here's how the flow goes:
+
+1.The user sends a request to the server for a secured endpoint.
+
+2.The SecurityFilterChain intercepts the request and checks whether the user is authenticated.
+
+3.If the user is not authenticated, the SecurityFilterChain redirects the user to the login page configured in formLogin.
+
+4.The user enters their credentials on the login page and submits the form.
+
+5.The UsernamePasswordAuthenticationFilter provided by Spring Security intercepts the 
+login request and authenticates the user by calling the UserDetailsService bean configured in WebSecurityConfig.
+
+6.The UserDetailsService implementation retrieves the user's details (including their password and
+ authorities) from a data source such as a database, and returns a UserDetails object.
+
+7.The UsernamePasswordAuthenticationFilter compares the password entered by the user to the 
+password in the UserDetails object. If the passwords match, authentication is successful and
+ the user is granted the authorities associated with their account.
+
+8.The SecurityFilterChain allows the request to proceed and the user is granted access to the secured endpoint.
+
+9.If the user logs out, the SecurityFilterChain intercepts the logout request and terminates the user's session.
+
+In summary, the SecurityFilterChain and UserDetailsService work together to authenticate and authorize
+ users in a Spring MVC application. The SecurityFilterChain intercepts requests and checks for authentication
+ and authorization, while the UserDetailsService retrieves user details from a data source and provides them
+ to the authentication filter for verification.
+
+
+
+@Bean
+	public UserDetailsService userDetailsService() {
+		UserDetails user =
+			 User.withDefaultPasswordEncoder()
+				.username("user")
+				.password("password")
+				.roles("USER")
+				.build();
+
+		return new InMemoryUserDetailsManager(user);
+	}
+
+ovim samo izbuildas usera i napravis userdetails service od njegovih informacija, automatski ce njega koristiti
+security chain filter za authentifikaciju

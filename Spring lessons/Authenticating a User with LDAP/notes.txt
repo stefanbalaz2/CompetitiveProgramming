@@ -1,0 +1,95 @@
+prvo moramo dodati spring security dependencies
+
+<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+<dependency>
+		<groupId>org.springframework.ldap</groupId>
+		<artifactId>spring-ldap-core</artifactId>
+</dependency>
+<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-ldap</artifactId>
+</dependency>
+<dependency>
+		<groupId>com.unboundid</groupId>
+		<artifactId>unboundid-ldapsdk</artifactId>
+</dependency>
+
+@Configuration obelezava springu da kroz tu klasu moramo proci da skeniramo beanove
+
+
+SecurityFilterChain is an interface in Spring Security that represents a chain of
+ filters responsible for handling security in a web application.
+In a web application, incoming HTTP requests need to pass through a series of filters
+ before reaching the application logic. Spring Security provides a number of security 
+filters that can be added to the filter chain to perform various security-related tasks,
+ such as authentication, authorization, and CSRF protection.
+
+SecurityFilterChain se zapravo sastoji iz liste filtera koji ce se primeniti na http request.
+
+@Configuration klase su zapravo klase koje mozemo naci u IoC, koje su tu na nivou celog programa
+i ponasaju se kao fabrike beanova, i kofigurisu isto beanove
+
+
+
+@Bean 
+ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    http.authorizeRequests()
+      .anyRequest().authenticated()
+      .and().httpBasic();
+    return http.build();
+}
+spring app ima skup svojih SecurityFIlterChain beanova koje smo mi instancirali i kad dodje http request
+taj request se u nekom orderu provlaci kroz te beanove, mi mozemo odrediti taj order sa @Order
+kada se http request matchuje sa nekim beanom, samo se kroz taj filter provuce i ne gledaju se naredni
+filteri
+
+
+flow http requesta gledajuci na SecurityFilterChain i AuthenticationManager je sledeci:
+	-request prolazi kroz filter chain definisan
+	-ako u chainu nije definisana nikakva autentifikacija, onda se nece nista ni autentifikovati
+	-ako u chainu ima autentifikacije, onda ce se defaultni AuthenticationManager bean koristiti za autentifikaciju
+	osim ako mu drugacije ne kazemo
+	-spring pri startupu, ako pozovemo neke funkcije na AuthenticationManagerBuilder da kofigurisemo AuthenticationManager
+	 onda ce spring napraviti AuthenticationManager bean na startupu sa tim konfiguracijama
+	 u suprotnom nece, i to ce biti defaultni AuthenticationManager
+	-mozemo imati vise AuthenticationManager beanova, ali sve ostale moramo sami definisati
+
+prilikom authentication, kada http prolazi kroz taj filter, to se dogadja ovako:
+	-iz http requesta se napravi objekat Authentication od user kredencijala
+	-AuthenticationManager se poziva nad objektom Authentication da proveri kredencijale
+	-AuthenticationManager koristi UserDetailsService da retrievuje user details iz data sourca
+	-onda AuthenticationManager koristi PasswordEncoder da proveri password
+	-ako je authentikacija bila uspesna napravi se SecurityContext sa user details i postavi se za current SecurityContext
+	-ako ne prodje autentikacija, baca exception
+	-AuthenticationManager ima razne AuthenticationProvidere u sebi gde ce se request poslati odredjenom na proveru
+	-if the authentication is successful, the UsernamePasswordAuthenticationFilter(ovaj filter za autentifikaciju) creates a 
+	session for the authenticated user (if sessions are enabled) and redirects the user to the
+	 original requested URL or the default success URL.
+
+@RestController
+public class MyController {
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginRequest request) {
+
+        Authentication authentication = new UsernamePasswordAuthenticationToken(
+                request.getUsername(), request.getPassword());
+
+        try {
+            authenticationManager.authenticate(authentication);
+            // Authentication succeeded, create a JWT token and return it
+        } catch (AuthenticationException ex) {
+            // Authentication failed, return an error response
+        }
+    }
+}
+ovako bismo napravili licni kontroler koji autentifikuje
+
+
+

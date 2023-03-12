@@ -1,0 +1,24 @@
+user se loguje
+dobije jwt token od servera
+kada salje zahteve dalje do servera, u headeru zahteva salje i svoj token
+koji se koristi za autorizaciju
+
+JWT token se sastoji iz 3 dela
+
+header:algoritam i tip kljuca
+payload: podaci koje pamtimo o useru
+verify signature
+
+znaci, kreira se token tako sto se encodeuje header,encoduje payload, onda se dobije signature
+tako sto se ukombinuju header i payload i budu hashovani sa secret keyom koji drzimo na serveru nasem
+onda imamo jwt token izgleda header.payload.signature
+i onda klijent to dobije
+kada nam klijent posalje taj token u headeru http zahteva, mi proveravamo da li je validan token
+tako sto decodujemo header i payloda, i onda hashujemo to sa nasim secret key da vidimo da li se poklapa sa signature iz tokena
+ako ne poklapa, onda je nesto njakao neko i ne prihvatamo zahtev
+
+sa aspectima mozemo da napravimo anotacije tako da role mozemo isproveravati pri ulasku u funkciju
+
+
+sa security chain filterima da bismo radili  autorizaciju i autentifikaciju, samo napravimo obican security filter chain, i u njega
+dodamo jwt authentication filter i jwt authorisation filter, koje izimplementiramo i tjt

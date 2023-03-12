@@ -1,0 +1,35 @@
+This example uses fixedRate, which specifies the interval between method invocations,
+ measured from the start time of each invocation. There are other options, such as fixedDelay,
+ which specifies the interval between invocations measured from the completion of the task.
+ You can also use @Scheduled(cron=". . .") expressions for more sophisticated task scheduling.
+
+@Autowired se koristi da injectujemo neki bean gde zelimo
+
+@Component
+public class UserRepository {
+    // Implementation details here
+}
+ovim imamo bean UserRepository u spring IoC
+
+@Autowired
+private UserRepository userRepository;
+
+ovako ga koristimo
+
+
+@Component is an annotation in the Java Spring Framework that is used to 
+indicate that a Java class is a Spring-managed component. When you annotate 
+a class with @Component, it tells Spring that this class should be registered
+ as a bean in the Spring application context.
+
+Logger klasa je kao neki log na koji mozes izgleda da pises u terminal 
+
+stavis ovu annotaciju iznad metode koju oces da schedulujes
+@Scheduled(fixedRate=2000)
+
+moras ist ostaviti @EnableScheduling da bi aktivirao scheduling uopste
+
+takodje, klasa metode koju schedulujemo, tj Spring ce da to stalno pokrece,
+mora da se nalazi u springovom dometu, tj mora da bude u Spring IoC,
+tj moramo da napravimo Bean od njega, sto znaci da mozemo to resiti tako sto recimo
+klasu obelezimo sa @Component

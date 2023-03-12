@@ -1,0 +1,58 @@
+recimo situacija, user salje request, dodje do nekog kontrolera, recimo da je 
+autorizovan da njemu pristupi, ali ono sto se izvrsava u kontroleru moze da se dogodi da 
+ne dozvoljava autorizaciju tog korisnika da pristupi, to znaci da iz kontrolera kad pozivamo ostale servise,
+moramo taj token od korisnika da pakujemo i header zahteva koji saljemo servisu
+
+kada saljemo i primamo http zahteve recimo preko resttemplate, moramo da primimo kao podatak
+Response entity, da bismo u responseu pristupili podacima radimo .getBody()
+
+sa exchange saljes zahtev iz kojeg cekas output
+
+problem prave pozivi servisima za koje ne zelimo da cekamo odgovor, moramo to nekako asinhrono raditi,
+to se moze message brokerima uraditi
+
+ima nacin za implementaciju brokera kao queue, i kao topic
+ima par tradeoffova koji se rade, kada broker iz queue prosledi element queue nekom servisu na obradu,
+queue ceka ack od servisa da zna da moze izbaciti iz queue taj element, ako ne dobije ack, onda ostaje element u queue
+ovo osigurava da cemo svaki element obraditi bar jednom
+ima drugi slucaj, mozemo da obradjujemo poruke max jednom, znaci bez cekanja ack
+
+inace, kad pokrenemo nas app context, mi imamo thread pool, i zahtevi se obradjuju njime
+moze se i dogoditi da nekad servis ne moze da primi uopste zahtev jer je pretrpan
+
+dignemo ActiveMQ broker na nekom portu, i preko njega cemo slati poruke
+
+Message brokers are used in software systems to facilitate communication and message exchange 
+between different applications or components. They offer several benefits, including:
+
+Decoupling: Message brokers decouple the sender and receiver of messages, allowing them to
+ operate independently of each other. This reduces the complexity of the system and makes it easier to maintain and scale.
+
+Asynchronous communication: Message brokers enable asynchronous communication, where a sender
+ can send a message without waiting for a response. This is useful in scenarios where the sender and receiver are not always available at the same time, or when the sender needs to send a message to multiple receivers.
+
+Load balancing: Message brokers can distribute messages across multiple receivers, providing
+ load balancing and improving system performance and scalability.
+
+Fault tolerance: Message brokers can provide fault tolerance by storing messages in case a 
+receiver is unavailable or fails to process a message. Messages can be retried or sent to another receiver to ensure they are processed.
+
+Protocol translation: Message brokers can act as a translator between different protocols
+ and data formats, allowing different systems to communicate with each other even if they use different languages, formats, or standards.
+
+Overall, message brokers can help improve the reliability, scalability, and flexibility of
+ software systems by providing a centralized and reliable mechanism for communication and message exchange.
+
+
+da bismo radili komunikaciju sa message brokerom, imamo u application.properties da setapujemo broker i queueove njegove
+onda, da bismo poruku poslali na queue, koristimo jmstemplate, i moramo objekat koji saljemo da pretvorimo u json,
+to mozemo sa MessageHelper klasom koju sami napravimo
+
+da bismo slusali sa objektima na queue, moramo posebnu klasu napraviti za listenovanje, gde jednu od metoda
+u toj klasi obelezimo sa @JmsListener(destination="ime queue",concurrency="5-10")
+i u toj metodi zapravo za argument dobijamo message iz queue, tj pravimo metodu koja ce da cita iz queue i izvrsava poruke,
+znaci pretvorimo poruku nazad u objekat, pa prosledimo na servis na koji zelimo
+
+kad ocemo iz application properties da pristupim varijabli, to pisem kao ${ime_varijable}
+
+dizes broker startovanjem nejgovog maina

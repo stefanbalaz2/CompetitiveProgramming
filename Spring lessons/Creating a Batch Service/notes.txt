@@ -1,0 +1,7 @@
+moras definisati procesor koji ce se koristiti da se pusti mahinalno na batchevima da isprocesuira sta ima
+
+implementiras interface implements ItemProcessor<Person, Person>, prvi parametar je input type, drugi je output type
+i ima @Override public Person process..
+
+
+ide na foru da definises batch job, definises writer,procesor,reader itd, nije nesto mnogo bitno

@@ -1,0 +1,31 @@
+Netflix Eureka is a service registry that is used for building highly available and fault-tolerant distributed systems. It allows services to register themselves and discover other services in a microservices architecture.
+
+Eureka provides a web-based user interface that displays the registered services, along with their status, metadata, and other details. Eureka also supports service-level health checks, which allow clients to quickly identify and avoid unhealthy services.
+
+In a microservices architecture, services are distributed across multiple nodes or servers, and communication between them is achieved through APIs. Without a service registry, the clients need to know the exact location of the services they want to communicate with. This can become difficult and error-prone as the number of services and nodes increases. With Eureka, services register themselves with the registry, and clients can look up the location of the services they need at runtime.
+
+Netflix Eureka has been a popular choice for service registry in the Java ecosystem, but there are also other options available, such as Consul and Zookeeper.
+
+U sustini bude tesko znaci gde se sve servisi nalaze pa nam service registry pomognu
+
+Moramo prvo da dignemo serVice registry sa @EnableEurekaServer
+
+server.port=8761
+Ovako promenimo port
+
+
+@RestController
+class ServiceInstanceRestController {
+
+ @Autowired
+ private DiscoveryClient discoveryClient;
+
+ @RequestMapping("/service-instances/{applicationName}")
+ public List<ServiceInstance> serviceInstancesByApplicationName(
+   @PathVariable String applicationName) {
+  return this.discoveryClient.getInstances(applicationName);
+ }
+}
+
+Ovako dobijamo servise po imenu, da bismo imali instancu DiscoveryClient, moramo staviti @EnableDiscoveryClient
+DiscoveryClient drzi sve potrebne informacije o servisima

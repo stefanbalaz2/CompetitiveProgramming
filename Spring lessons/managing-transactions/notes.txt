@@ -1,0 +1,2 @@
+transakcije znace da ce se svaka operaciji vrsiti kao transakcija, tj ako failuje operacije, bice roll backovana
+i bice bacen neki exception

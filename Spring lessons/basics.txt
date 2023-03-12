@@ -1,0 +1,25 @@
+ulaskom u browser i kucanjem URL gore(pisemo urlove jer je lakse nego ip adrese, a routeri pretvaraju i nalaze rute tih urlova)
+mi zapravo trazimo od servera koji hostuje tu adresu, da nam odgovori na nas request, ako recimo pristupamo stranici,
+onda ce to vrv biti samo da nam posalje html stranice, u html cemo imati recimo da kad kliknemo dugme frontend
+posalje http zahtev tom serveru, tj backendu servera
+
+front i back i servisi i db komuniciraju preko API, tj slanjem http zahteva, gde imamo endpointe za svaki api
+recimo zahtev http://www.blabla.com/api/data, prvi deo pre /api/data ce routeri da rese, a ostatak ce da backend primi
+i hendluje
+
+JPA - java persistance API sluzi da mozemo tableove predstaviti kao klase u kodu
+
+controleri sluze da directujemo http zahteve u odredjene funkcije
+
+DB drajver sluzi da od kverija koji postavimo, pravi odgovarajuce HTTP zahteve za bazu
+
+baza, backend,servisi, to su posebne komponente koje komuniciraju preko API sa http zahtevima
+
+@ResponseBody oznacava da funkcija returnuje content, a ne html view
+
+Beanovi su instance klasi koje se cuvaju u spring IoC i mozemo im globalno pristupati
+
+pri startupu spring prolazi kroz klase sa @Component,@Service,@Repository,@Controller,@RestController,@Configuration
+i napravi beanove tih klasi, onda u njima pokrene sve @Bean(i napravi te beanove), onda pokrene isto sve @Autowired,
+kad instanciramo klase kao beanove to ce se dogoditi tako sto pozove default constructor, ako hocemo posebni konstruktor
+da pozovemo, stavimo iznad njega @Autowired(logicno)
