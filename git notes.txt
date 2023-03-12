@@ -90,7 +90,7 @@ znaci, ova komanda samo doda, da kazemo, refference,ime, na neki remote repo, pa
 vise remote repo
 
 kad ovo uradimo, mozemo da git pull bob, da dobijemo njegov repo ovde lokalno, pa onda mozemo da 
-git push bob/main sto pushuje nase lokalne promene na nasem trenutnom branchu na main granu boba
+git push bob <zeljena lokalna grana>:main sto pushuje nase lokalne promene na nasem trenutnom branchu na main granu boba
 mozemo da pullujemo i neki odredjeni branch sa boba tako sto
 git fetch bob grana_1
 Note that this command only fetches the changes from the specified branch, not any other branches on the remote repository
@@ -111,8 +111,8 @@ of the objects and branches from the remote repository and merge them into your 
 In general, it's usually a better practice to only pull the branches that you need from the remote repository,
  rather than pulling the entire repository. This can help minimize the chances of conflicts and can also save time and bandwidth.
 
-git push <remote> <branch>
-ovako pushujemo trenutni selectovani branch na remote repo na njegov branch
+git push <remote> <local_branch>:<branch>
+ovako pushujemo zeljeni lokalni selectovani branch na remote repo na njegov branch
 
 
 commit zapravo sacuva na lokalnom gitu promene,
@@ -150,6 +150,20 @@ napise text u fajl
 ako stavimo >> onda appendujemo
 
 
-git push -u <remote_branch>
+git push -u 
 -u or --set-upstream is an option that tells Git to set up tracking information between
  the local and remote branches, so that future git push or git pull commands can be used without specifying the remote branch.
+
+
+da bi napravio novu granu na osnovu nekog local brancha
+git push -u <remote> <starting-local-branch>:<new-branch>
+onda ovako
+
+git remote -v da displajujemo URL povezanih repo
+git branch -a ispise sve branchove povezane
+
+git remote remove origin
+ovo da bih izbrisao remote repo sa imenom origin
+
+kada mergujes 2 grane koje nemaju zajednicki hystory, ubacis kao parametar na kraj merge/pulla
+--allow-unrelated-histories
