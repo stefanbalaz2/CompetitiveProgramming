@@ -1,0 +1,67 @@
+/*
+
+    binary search over one half of the donut
+
+*/
+#include<bits/stdc++.h>
+#define pb push_back
+#define ff first
+#define ss second
+#define ll long long
+using namespace std;
+typedef pair<int,int> pii;
+int n,cnt;
+const int maxx=1e9;
+int query(int x){
+
+    cnt++;
+    printf("QUERY %d %d\n",x,(x+maxx/2-1)%maxx);
+    fflush(stdout);
+    int ret;
+    scanf("%d",&ret);
+    return ret;
+}
+void ans(int x){
+
+    printf("YES %d\n",x);
+}
+int main(){
+
+    ///freopen("test.txt","r",stdin);
+
+    scanf("%d",&n);
+
+    int diff=n/2;
+
+    int l=0;
+    int r=maxx/2-1;
+
+    int pom=query(0);
+    int pp=pom;
+    cnt++;
+    if(pom==diff){
+        ans(0);
+        return 0;
+    }
+
+
+    int sr;
+    int left=28;
+    while(left--){
+
+        sr=(l+r)/2;
+        pom=query(sr);
+
+        if(pom-diff==0){
+            ans(sr);
+            return 0;
+        }
+
+        if((pom-diff<0 && pp<diff)||(pom-diff>0 && pp>diff))l=sr+1;
+        else r=sr-1;
+    }
+
+    printf("YES %d\n",(r+l)/2);
+
+    return 0;
+}
