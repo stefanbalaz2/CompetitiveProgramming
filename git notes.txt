@@ -167,3 +167,13 @@ ovo da bih izbrisao remote repo sa imenom origin
 
 kada mergujes 2 grane koje nemaju zajednicki hystory, ubacis kao parametar na kraj merge/pulla
 --allow-unrelated-histories
+
+
+kada oces da resolvujes conflikte, on ti je vec pullovao stvari na laptop, i ispisao mesta gde su konflikti,
+onda ja moram da udjem u te fajlove, resolvujem konflikte rucno u fajlovima, commitujem ih, pushujem/pullujem
+
+kada ocu da napravim novi cisti branch, on mora znaci da bude orphan, znaci
+git checkout --orphan "branchname"
+ali tad se nalazimo u tom branchu ali dodate su u staging area svi fajlovi koje imamo vec u grani iz koje smo napravili
+orphana, pa moramo da uklonimo te sve fajlove iz staging area sa
+git rm -rf .
