@@ -143,7 +143,17 @@ vector<ll> pol_mul(vector<ll>&a,vector<ll>&b){
     vector<ll>ret(n);
 
     for(int i=0;i<n;i++){
-        ret[i]=round(fa[i].real()+c*c*fa[i].imag()+c*fb[i].real());
+        int sq=mul(c,c);
+        ll p1=round(fa[i].real());
+        ll p2=round(fa[i].imag());
+        ll p3=round(fb[i].real());
+        p1%=mod;
+        p2%=mod;
+        p3%=mod;
+        p2=mul(p2,sq);
+        p3=mul(c,p3);
+        ret[i]=add(p1,add(p2,p3));
+        ///ret[i]=round(fa[i].real()+c*c*fa[i].imag()+c*fb[i].real());
     }
 
     while(ret.back()==0)ret.pop_back();
