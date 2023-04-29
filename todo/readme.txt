@@ -15,7 +15,7 @@ https://codeforces.com/blog/entry/49691
 https://codeforces.com/blog/entry/113465    hashing trees
 https://codeforces.com/blog/entry/61203     mo optimisation
 
-
+https://codeforces.com/blog/entry/115617    arrow product, DAG enumeration
                                             wavelet tree,segtree beats
 https://codeforces.com/blog/entry/17787     wavelet matrix and palindromic tree
 https://codeforces.com/blog/entry/113041    petotrator blogs competition
