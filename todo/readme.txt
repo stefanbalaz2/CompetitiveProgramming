@@ -3,7 +3,6 @@ https://drive.google.com/drive/folders/1z7Xm3yMh_ogFY0j77g6E0G6aoIKd8L45   abstr
 
 done:
 https://codeforces.com/blog/entry/96003 generalized fwht
-https://codeforces.com/blog/entry/61306 berlkey massey
 https://codeforces.com/blog/entry/99646 translating a polynomial
 https://codeforces.com/blog/entry/77468 generating
 https://codeforces.com/blog/entry/103329 kirchoff
@@ -14,6 +13,8 @@ todo
 https://codeforces.com/blog/entry/49691
 https://codeforces.com/blog/entry/113465    hashing trees
 https://codeforces.com/blog/entry/61203     mo optimisation
+https://codeforces.com/blog/entry/61306     berlkey massey
+https://mzhang2021.github.io/cp-blog/berlekamp-massey/#berlekamp-massey
 
 https://codeforces.com/blog/entry/115696    polynomial sampling shift
 
