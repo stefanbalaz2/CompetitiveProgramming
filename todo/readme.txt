@@ -18,6 +18,8 @@ https://mzhang2021.github.io/cp-blog/berlekamp-massey/#berlekamp-massey
 https://mzhang2021.github.io/cp-blog/kruskal/
 https://mzhang2021.github.io/cp-blog/burnside/
 
+https://codeforces.com/blog/entry/117237
+
 https://codeforces.com/blog/entry/60737
 
 https://codeforces.com/blog/entry/49446
