@@ -11,7 +11,8 @@ https://codeforces.com/blog/entry/103329 kirchoff
 todo
 https://codeforces.com/blog/entry/91632     count primes n^2/3
                                             manacher
-https://codeforces.com/blog/entry/117635    dirihlet
+https://codeforces.com/blog/entry/117635    dirihlet 1
+https://codeforces.com/blog/entry/117783    dirihlet 0
 https://codeforces.com/blog/entry/49691
 https://codeforces.com/blog/entry/113465    hashing trees
 https://codeforces.com/blog/entry/61203     mo optimisation
