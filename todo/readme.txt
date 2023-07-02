@@ -9,6 +9,8 @@ https://codeforces.com/blog/entry/103329 kirchoff
 
 
 todo
+
+https://codeforces.com/blog/entry/82094     kinetic segtree
 https://codeforces.com/blog/entry/91632     count primes n^2/3
                                             manacher
 https://codeforces.com/blog/entry/117635    dirihlet 1
