@@ -97,10 +97,9 @@ vector<int> berlekamp_massey(vector<int>s){
 
             for(int j=1;j<=i-f-1;j++)d.pb(0);
 
-            int pom_inv=invv(last_eval);
+            int pom_inv=mul(invv(last_eval),eval);
             for(int j=0;j<d.size();j++)
-                d[j]=mul(d[j],mul(pom_inv,eval));
-
+                d[j]=mul(d[j],pom_inv);
 
             vector<int>temp=c;
             int oldcsz=c.size();
