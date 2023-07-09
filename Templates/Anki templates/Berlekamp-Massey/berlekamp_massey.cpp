@@ -67,68 +67,60 @@ void adv(int dp[maxn][maxn]){
 
 }
 
-
-
+void shift_right(vector<int>&v,int d){
+    for(int i=v.size()-1;i>=d;i--)v[i]=v[i-d];
+    for(int i=d-1;i>=0;i--)v[i]=0;
+}
 vector<int> berlekamp_massey(vector<int>s){
 
-    int f=-1;
-    int last_eval=-1;
     vector<int>c,oldc;
+    int f=-1;
+    int last_delta=-1;
+
     for(int i=0;i<s.size();i++){
 
-        int eval=s[i];
-        for(int j=0;j<c.size();j++)
-            eval=sub(eval,mul(s[i-j-1],c[c.size()-j-1]));
+        int delta=s[i];
+        for(int j=1;j<=c.size();j++)
+            delta=sub(delta,mul(s[i-j],c[j-1]));
 
-        if(eval==0)continue;
+        if(delta==0)continue;
 
         if(f==-1){
             c.resize(i+1);
-            for(int j=0;j<=i;j++)c[j]=0;
             f=i;
-            last_eval=eval;
+            last_delta=delta;
         }
         else{
 
             vector<int>d=oldc;
-
+            d.resize(d.size()+1);
+            shift_right(d,1);
             for(int j=0;j<d.size();j++)d[j]=sub(0,d[j]);
-            d.pb(1);
+            d[0]=1;
 
-            for(int j=1;j<=i-f-1;j++)d.pb(0);
+            int pom=mul(invv(last_delta),delta);
+            for(int j=0;j<d.size();j++)d[j]=mul(d[j],pom);
 
-            int pom_inv=mul(invv(last_eval),eval);
-            for(int j=0;j<d.size();j++)
-                d[j]=mul(d[j],pom_inv);
+            int zeroes=i-f-1;
+            d.resize(d.size()+zeroes);
+            shift_right(d,zeroes);
 
             vector<int>temp=c;
-            int oldcsz=c.size();
             c.resize(max(c.size(),d.size()));
-            int cszdelta=c.size()-oldcsz;
-            for(int j=c.size()-1;j>=cszdelta;j--)c[j]=c[j-cszdelta];
-            for(int j=0;j<cszdelta;j++)c[j]=0;
-            for(int j=0;j<d.size();j++)
-                c[c.size()-j-1]=add(c[c.size()-j-1],d[d.size()-j-1]);
+            for(int j=0;j<d.size();j++)c[j]=add(c[j],d[j]);
 
-            if(i-(int)temp.size()>f-(int)oldc.size()){
-                last_eval=eval;
-                f=i;
+            if(i-temp.size()>f-oldc.size()){
+                last_delta=delta;
                 oldc=temp;
+                f=i;
             }
 
         }
-
     }
-
-    if(s.size()<c.size()*2){
-        c.clear();
-        return c;
-    }
-
-    reverse(c.begin(),c.end());
 
     return c;
 }
+
 template<typename T>
 T solve(const vector<T> &c, const vector<T> &s, long long n) {
     int m = (int) c.size();
