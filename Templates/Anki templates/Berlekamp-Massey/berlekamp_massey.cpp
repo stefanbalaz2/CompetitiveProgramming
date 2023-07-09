@@ -120,40 +120,10 @@ vector<int> berlekamp_massey(vector<int>s){
 
     return c;
 }
-/*
-template<typename T>
-T solve(const vector<T> &c, const vector<T> &s, long long n) {
-    int m = (int) c.size();
-    assert(c.size() <= s.size());
-
-    auto mul2 = [&] (const vector<T> &a, const vector<T> &b) -> vector<T> {
-        vector<T> ret(a.size() + b.size() - 1);
-        for (int i=0; i<(int)a.size(); i++)
-            for (int j=0; j<(int)b.size(); j++)
-                ret[i+j] =add(ret[i+j],mul(a[i],b[j]));
-        for (int i=(int)ret.size()-1; i>=m; i--)
-            for (int j=m-1; j>=0; j--)
-                ret[i-j-1]=add(ret[i-j-1],mul(ret[i],c[j]));
-        ret.resize(min((int) ret.size(), m));
-        return ret;
-    };
-
-    vector<T> a = m == 1 ? vector<T>{c[0]} : vector<T>{0, 1}, x{1};
-    for (; n>0; n/=2) {
-        if (n % 2)
-            x = mul2(x, a);
-        a = mul2(a, a);
-    }
-    x.resize(m);
-
-    T ret = 0;
-    for (int i=0; i<m; i++)
-        ret=add(ret,mul(x[i],s[i]));
-    return ret;
-}*/
 int solve(vector<int>c,vector<int>s,ll n){
 
     int m=c.size();
+    assert(m>0);
 
     auto mul2 = [&](const vector<int>v1,const vector<int>v2) -> vector<int>{
         vector<int>ret(v1.size()-1+v2.size());
@@ -180,6 +150,8 @@ int solve(vector<int>c,vector<int>s,ll n){
     }
 
     int rez=0;
+    s.resize(m);
+    ret.resize(m);
     for(int i=0;i<m;i++)
         rez=add(rez,mul(ret[i],s[i]));
 
