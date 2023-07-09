@@ -157,6 +157,53 @@ int solve(vector<int>c,vector<int>s,ll n){
 
     return rez;
 }
+/*
+/// ova verzija ima otp duplo manje mul2 poziva
+int solve(vector<int>c,vector<int>s,ll n){
+
+    int m=c.size();
+    assert(m>0);
+
+    auto mul2 = [&](const vector<int>v1,const vector<int>v2) -> vector<int>{
+        vector<int>ret(v1.size()-1+v2.size());
+        for(int i=0;i<v1.size();i++)
+            for(int j=0;j<v2.size();j++)
+                ret[i+j]=add(ret[i+j],mul(v1[i],v2[j]));
+        for(int i=ret.size()-1;i>=m;i--)
+            for(int j=m-1;j>=0;j--)
+            ret[i-j-1]=add(ret[i-j-1],mul(ret[i],c[j]));
+        ret.resize(min((int)ret.size(),m));
+        return ret;
+    };
+
+    std::function<vector<int>(ll)> step2 = [&] (ll n)->vector<int>{
+
+        if(n==0)return {1};
+        if(n==1){
+            if(m==1)return {c[0]};
+            else return {0,1};
+        }
+
+        vector<int>pom=step2(n/2);
+        pom=mul2(pom,pom);
+        vector<int>pom2={c[0]};
+        if(m>1)pom2={0,1};
+        if(n&1)pom=mul2(pom,pom2);
+
+        return pom;
+    };
+
+    vector<int>ret=step2(n);
+
+    int rez=0;
+    s.resize(m);
+    ret.resize(m);
+    for(int i=0;i<m;i++)
+        rez=add(rez,mul(ret[i],s[i]));
+
+    return rez;
+}
+*/
 
 void go(int m){
 
