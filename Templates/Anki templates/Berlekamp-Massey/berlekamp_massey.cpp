@@ -120,7 +120,7 @@ vector<int> berlekamp_massey(vector<int>s){
 
     return c;
 }
-
+/*
 template<typename T>
 T solve(const vector<T> &c, const vector<T> &s, long long n) {
     int m = (int) c.size();
@@ -150,6 +150,40 @@ T solve(const vector<T> &c, const vector<T> &s, long long n) {
     for (int i=0; i<m; i++)
         ret=add(ret,mul(x[i],s[i]));
     return ret;
+}*/
+int solve(vector<int>c,vector<int>s,ll n){
+
+    int m=c.size();
+
+    auto mul2 = [&](const vector<int>v1,const vector<int>v2) -> vector<int>{
+        vector<int>ret(v1.size()-1+v2.size());
+        for(int i=0;i<v1.size();i++)
+            for(int j=0;j<v2.size();j++)
+                ret[i+j]=add(ret[i+j],mul(v1[i],v2[j]));
+        for(int i=ret.size()-1;i>=m;i--)
+            for(int j=m-1;j>=0;j--)
+            ret[i-j-1]=add(ret[i-j-1],mul(ret[i],c[j]));
+        ret.resize(min((int)ret.size(),m));
+        return ret;
+    };
+
+    vector<int>base={0,1};
+    if(m==1){
+        base.resize(1);
+        base[0]=c[0];
+    }
+    vector<int>ret={1};
+    while(n){
+        if(n&1)ret=mul2(ret,base);
+        base=mul2(base,base);
+        n>>=1;
+    }
+
+    int rez=0;
+    for(int i=0;i<m;i++)
+        rez=add(rez,mul(ret[i],s[i]));
+
+    return rez;
 }
 
 void go(int m){
