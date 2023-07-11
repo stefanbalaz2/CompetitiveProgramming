@@ -13,6 +13,9 @@ https://mzhang2021.github.io/cp-blog/berlekamp-massey/#berlekamp-massey
 todo
 
 
+https://codeforces.com/blog/entry/117906    stirling numbers
+https://codeforces.com/blog/entry/118018    eval and interpolate on geometric progression
+https://codeforces.com/blog/entry/118098    adamant - dinitz on bipartite
 https://codeforces.com/blog/entry/85969
 https://codeforces.com/blog/entry/80383     link cut
 https://codeforces.com/blog/entry/82094     kinetic segtree
