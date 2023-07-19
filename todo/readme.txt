@@ -13,6 +13,7 @@ https://mzhang2021.github.io/cp-blog/berlekamp-massey/#berlekamp-massey
 todo
 
 
+https://codeforces.com/blog/entry/118391    simulate min cost flow
 https://codeforces.com/blog/entry/117906    stirling numbers
 https://codeforces.com/blog/entry/118018    eval and interpolate on geometric progression
 https://codeforces.com/blog/entry/118098    adamant - dinitz on bipartite
