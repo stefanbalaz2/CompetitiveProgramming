@@ -12,7 +12,8 @@ https://mzhang2021.github.io/cp-blog/berlekamp-massey/#berlekamp-massey
 
 todo
 
-https://codeforces.com/blog/entry/118706.       observations
+https://codeforces.com/blog/entry/118836    games
+https://codeforces.com/blog/entry/118706    observations
 https://codeforces.com/blog/entry/111217    common mistakes
 https://codeforces.com/blog/entry/118391    simulate min cost flow
 https://codeforces.com/blog/entry/117906    stirling numbers
