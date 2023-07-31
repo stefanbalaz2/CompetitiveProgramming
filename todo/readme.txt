@@ -12,6 +12,7 @@ https://mzhang2021.github.io/cp-blog/berlekamp-massey/#berlekamp-massey
 
 todo
 
+https://codeforces.com/blog/entry/103222    slope trick
 https://codeforces.com/blog/entry/118836    games
 https://codeforces.com/blog/entry/118706    observations
 https://codeforces.com/blog/entry/111217    common mistakes
