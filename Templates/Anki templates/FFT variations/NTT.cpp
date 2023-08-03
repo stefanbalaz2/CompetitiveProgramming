@@ -100,6 +100,9 @@ vector<int> pol_mul(vector<int>a,vector<int>b){
     while(a.size() && a.back()==0)a.pop_back();
     while(b.size() && b.back()==0)b.pop_back();
 
+    if(a.size()==0)a.pb(0);
+    if(b.size()==0)b.pb(0);
+
     if(a.size()*b.size()<brute_par){
         return pol_mul_brute(a,b);
     }
