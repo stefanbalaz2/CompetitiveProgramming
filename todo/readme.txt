@@ -25,6 +25,7 @@ https://codeforces.com/blog/entry/85969
 https://codeforces.com/blog/entry/80383     link cut
 https://codeforces.com/blog/entry/82094     kinetic segtree
 https://codeforces.com/blog/entry/91632     count primes n^2/3
+https://codeforces.com/blog/entry/119855    dp stuff
                                             manacher
 https://codeforces.com/blog/entry/117635    dirihlet 1
 https://codeforces.com/blog/entry/117783    dirihlet 0
