@@ -8,6 +8,7 @@ https://codeforces.com/blog/entry/77468 generating
 https://codeforces.com/blog/entry/103329 kirchoff
 https://codeforces.com/blog/entry/61306     berlkey massey
 https://mzhang2021.github.io/cp-blog/berlekamp-massey/#berlekamp-massey
+https://codeforces.com/blog/entry/119919    persistent dsu
 
 
 todo
@@ -26,7 +27,6 @@ https://codeforces.com/blog/entry/80383     link cut
 https://codeforces.com/blog/entry/82094     kinetic segtree
 https://codeforces.com/blog/entry/91632     count primes n^2/3
 https://codeforces.com/blog/entry/119855    dp stuff
-https://codeforces.com/blog/entry/119919    persistent dsu
                                             manacher
 https://codeforces.com/blog/entry/117635    dirihlet 1
 https://codeforces.com/blog/entry/117783    dirihlet 0
