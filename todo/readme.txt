@@ -12,7 +12,8 @@ https://codeforces.com/blog/entry/119919    persistent dsu
 
 
 todo
-\
+
+https://codeforces.com/blog/entry/117237    GF vezbice
 https://codeforces.com/blog/entry/118984    burnside i polya
 https://codeforces.com/blog/entry/103222    slope trick
 https://codeforces.com/blog/entry/118836    games
