@@ -1,6 +1,6 @@
 /*
 
-  dat je simple poligon, counterclockwise rotacije
+  dat je simple poligon, counterclockwise rotacije, bez koolinearnih uzastopnih tacaka(vrv radi i kad ih ima)
   dat je line segment sa 2 tacke koje se nalaze na boundariju(verovatno ovo i radi kad su date 2 tacke koje mogu biti i u poligonu)
   ovde su funkcije koje proveravaju da li se line segment u potpunosti sadrzi u poligonu
 
