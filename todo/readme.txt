@@ -14,6 +14,7 @@ https://codeforces.com/blog/entry/119919    persistent dsu
 todo
 
 https://oi-wiki.org/                        kineski OI materijali
+https://www.dropbox.com/s/2ubl00x2zzkojsr/dominator.pdf?dl=0    dominator tree
 https://codeforces.com/blog/entry/117237    GF vezbice
 https://codeforces.com/blog/entry/118984    burnside i polya
 https://codeforces.com/blog/entry/103222    slope trick
