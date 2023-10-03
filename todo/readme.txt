@@ -13,7 +13,7 @@ https://codeforces.com/blog/entry/119919    persistent dsu
 
 todo
 
-
+https://codeforces.com/blog/entry/121012    lucas theorem tricks
 https://cp-tricki.github.io/combinatorics/One%20can%20use%20determinants%20to%20count%20lattice%20paths/    determinant for latice paths
 https://oi-wiki.org/                        kineski OI materijali
 https://www.dropbox.com/s/2ubl00x2zzkojsr/dominator.pdf?dl=0    dominator tree
