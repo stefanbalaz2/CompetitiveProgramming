@@ -1,5 +1,7 @@
 /**
 
+    matroids: edge delete connectivity + edge delete connectivity
+
     weighted matroid intersection
     problem: https://naipc18.kattis.com/problems/rainbowgraph
 
