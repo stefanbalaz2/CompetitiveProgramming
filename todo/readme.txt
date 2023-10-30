@@ -33,6 +33,7 @@ https://codeforces.com/blog/entry/82094     kinetic segtree
 https://codeforces.com/blog/entry/91632     count primes n^2/3
 https://codeforces.com/blog/entry/119855    dp stuff
 https://codeforces.com/blog/entry/61203     new mo sort
+https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
                                             manacher
 https://codeforces.com/blog/entry/117635    dirihlet 1
 https://codeforces.com/blog/entry/117783    dirihlet 0
