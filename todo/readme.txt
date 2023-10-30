@@ -9,6 +9,7 @@ https://codeforces.com/blog/entry/103329 kirchoff
 https://codeforces.com/blog/entry/61306     berlkey massey
 https://mzhang2021.github.io/cp-blog/berlekamp-massey/#berlekamp-massey
 https://codeforces.com/blog/entry/119919    persistent dsu
+https://codeforces.com/blog/entry/69287     matroid
 
 
 todo
@@ -71,7 +72,6 @@ https://codeforces.com/blog/entry/94190     network simplex
 https://codeforces.com/blog/entry/110801    probabilities
 https://codeforces.com/blog/entry/110961    greedoid
 https://codeforces.com/blog/entry/71097     randomized
-https://codeforces.com/blog/entry/69287     matroid
 
 https://codeforces.com/blog/entry/108395  lattice paths
 https://codeforces.com/blog/entry/98413   generalized mobius inversion on posets
