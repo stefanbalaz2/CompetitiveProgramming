@@ -14,6 +14,7 @@ https://codeforces.com/blog/entry/69287     matroid
 
 todo
 
+https://atcoder.jp/contests/abc300/editorial/6286    svi linkovi sa ovog linkja
 https://codeforces.com/blog/entry/121012    lucas theorem tricks
 https://cp-tricki.github.io/combinatorics/One%20can%20use%20determinants%20to%20count%20lattice%20paths/    determinant for latice paths
 https://oi-wiki.org/                        kineski OI materijali
