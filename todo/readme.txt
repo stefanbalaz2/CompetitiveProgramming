@@ -15,6 +15,7 @@ https://atcoder.jp/contests/abc300/editorial/6286    digital formal power series
 
 todo
 
+https://codeforces.com/blog/entry/122195    series and bin exp
 https://codeforces.com/blog/entry/62393    unordered map
 https://codeforces.com/blog/entry/21853    unordered map
 https://codeforces.com/blog/entry/121012    lucas theorem tricks
