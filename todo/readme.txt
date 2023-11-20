@@ -11,6 +11,7 @@ https://mzhang2021.github.io/cp-blog/berlekamp-massey/#berlekamp-massey
 https://codeforces.com/blog/entry/119919    persistent dsu
 https://codeforces.com/blog/entry/69287     matroid
 https://atcoder.jp/contests/abc300/editorial/6286    digital formal power series
+https://codeforces.com/blog/entry/91632     count primes n^2/3
 
 
 todo
@@ -38,7 +39,6 @@ https://codeforces.com/blog/entry/118098    adamant - dinitz on bipartite
 https://codeforces.com/blog/entry/85969
 https://codeforces.com/blog/entry/80383     link cut
 https://codeforces.com/blog/entry/82094     kinetic segtree
-https://codeforces.com/blog/entry/91632     count primes n^2/3
 https://codeforces.com/blog/entry/119855    dp stuff
 https://codeforces.com/blog/entry/61203     new mo sort
 https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
