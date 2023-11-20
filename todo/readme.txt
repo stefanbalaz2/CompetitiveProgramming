@@ -15,6 +15,8 @@ https://atcoder.jp/contests/abc300/editorial/6286    digital formal power series
 
 todo
 
+
+https://codeforces.com/blog/entry/91632?#comment-802482 dirichlet for prime counting and link to dirichlet fast operations
 https://codeforces.com/blog/entry/92128    formal power series on sets
 https://codeforces.com/blog/entry/122195    series and bin exp
 https://codeforces.com/blog/entry/62393    unordered map
