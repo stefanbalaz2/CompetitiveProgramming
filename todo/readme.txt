@@ -14,6 +14,7 @@ https://atcoder.jp/contests/abc300/editorial/6286    digital formal power series
 https://codeforces.com/blog/entry/91632     count primes n^2/3
 https://codeforces.com/blog/entry/85969    nice trick involving matrix expo multiplied by vectors
 https://codeforces.com/blog/entry/113465    hashing trees
+                                            wavelet tree,segtree beats
 
 
 todo
@@ -59,7 +60,6 @@ https://codeforces.com/blog/entry/49446
 https://codeforces.com/blog/entry/115696    polynomial sampling shift
 
 https://codeforces.com/blog/entry/115617    arrow product, DAG enumeration
-                                            wavelet tree,segtree beats
 https://codeforces.com/blog/entry/17787     wavelet matrix and palindromic tree
 https://codeforces.com/blog/entry/113041    petotrator blogs competition
 https://codeforces.com/blog/entry/111849    how to prove your solutions
