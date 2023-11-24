@@ -13,6 +13,7 @@ https://codeforces.com/blog/entry/69287     matroid
 https://atcoder.jp/contests/abc300/editorial/6286    digital formal power series
 https://codeforces.com/blog/entry/91632     count primes n^2/3
 https://codeforces.com/blog/entry/85969    nice trick involving matrix expo multiplied by vectors
+https://codeforces.com/blog/entry/113465    hashing trees
 
 
 todo
@@ -46,7 +47,6 @@ https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
 https://codeforces.com/blog/entry/117635    dirihlet 1
 https://codeforces.com/blog/entry/117783    dirihlet 0
 https://codeforces.com/blog/entry/49691
-https://codeforces.com/blog/entry/113465    hashing trees
 https://codeforces.com/blog/entry/61203     mo optimisation
 https://mzhang2021.github.io/cp-blog/kruskal/
 https://mzhang2021.github.io/cp-blog/burnside/
