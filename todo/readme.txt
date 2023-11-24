@@ -12,6 +12,7 @@ https://codeforces.com/blog/entry/119919    persistent dsu
 https://codeforces.com/blog/entry/69287     matroid
 https://atcoder.jp/contests/abc300/editorial/6286    digital formal power series
 https://codeforces.com/blog/entry/91632     count primes n^2/3
+https://codeforces.com/blog/entry/85969    nice trick involving matrix expo multiplied by vectors
 
 
 todo
@@ -36,7 +37,6 @@ https://codeforces.com/blog/entry/118391    simulate min cost flow
 https://codeforces.com/blog/entry/117906    stirling numbers
 https://codeforces.com/blog/entry/118018    eval and interpolate on geometric progression
 https://codeforces.com/blog/entry/118098    adamant - dinitz on bipartite
-https://codeforces.com/blog/entry/85969
 https://codeforces.com/blog/entry/80383     link cut
 https://codeforces.com/blog/entry/82094     kinetic segtree
 https://codeforces.com/blog/entry/119855    dp stuff
