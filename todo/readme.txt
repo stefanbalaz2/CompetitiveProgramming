@@ -17,11 +17,12 @@ https://codeforces.com/blog/entry/113465    hashing trees
                                             wavelet tree,segtree beats
 https://codeforces.com/blog/entry/62393    unordered map
 https://codeforces.com/blog/entry/21853    unordered map
+https://codeforces.com/blog/entry/61675    improving randomized solutions
 
 
 todo
 
-https://codeforces.com/blog/entry/61675    improving randomized solutions
+
 https://codeforces.com/blog/entry/120841    edge centroid decomp
 https://codeforces.com/blog/entry/91632?#comment-802482 dirichlet for prime counting and link to dirichlet fast operations
 https://codeforces.com/blog/entry/92128    formal power series on sets
