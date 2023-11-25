@@ -16,6 +16,7 @@ https://codeforces.com/blog/entry/85969    nice trick involving matrix expo mult
 https://codeforces.com/blog/entry/113465    hashing trees
                                             wavelet tree,segtree beats
 https://codeforces.com/blog/entry/62393    unordered map
+https://codeforces.com/blog/entry/21853    unordered map
 
 
 todo
@@ -25,7 +26,6 @@ https://codeforces.com/blog/entry/120841    edge centroid decomp
 https://codeforces.com/blog/entry/91632?#comment-802482 dirichlet for prime counting and link to dirichlet fast operations
 https://codeforces.com/blog/entry/92128    formal power series on sets
 https://codeforces.com/blog/entry/122195    series and bin exp
-https://codeforces.com/blog/entry/21853    unordered map
 https://codeforces.com/blog/entry/121012    lucas theorem tricks
 https://cp-tricki.github.io/combinatorics/One%20can%20use%20determinants%20to%20count%20lattice%20paths/    determinant for latice paths
 https://oi-wiki.org/                        kineski OI materijali
