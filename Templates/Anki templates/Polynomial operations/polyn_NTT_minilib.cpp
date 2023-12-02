@@ -58,6 +58,8 @@ namespace polynomial{
 
         void fft(vector<int>&a,bool invert){
 
+            prek();
+            
             int n=a.size();
             int j=0;
             for(int i=1;i<n;i++){
@@ -101,8 +103,6 @@ namespace polynomial{
         }
 
         polyn operator *(polyn b){
-
-            prek();
 
             int n=1;
             while(n<(int)a.size()+(int)b.size()-1)n<<=1;
