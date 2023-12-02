@@ -105,7 +105,7 @@ namespace polynomial{
             prek();
 
             int n=1;
-            while(n<a.size()+b.size()-1)n<<=1;
+            while(n<(int)a.size()+(int)b.size()-1)n<<=1;
             vector<int>ret=a;
 
             if(min((int)a.size(),b.size())<MAGIC)return brute_pmul(b);
