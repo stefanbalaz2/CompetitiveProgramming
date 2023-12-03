@@ -66,8 +66,8 @@ void build(string &s){
         append(s[i]-'a');
 }
 
-vector<int>vect[maxn];
-int stt[maxn][maxalp],lps[maxn],rps[maxn];
+vector<int>vect[maxn*2];
+int stt[maxn*2][maxalp],lps[maxn*2],rps[maxn*2];
 void go(int x){
 
     for(int i=0;i<vect[x].size();i++){
