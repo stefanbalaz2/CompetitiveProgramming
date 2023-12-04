@@ -6,144 +6,202 @@
 using namespace std;
 typedef pair<int,int> pii;
 
-const int maxn=18;
+const int mod=998244353;
+inline int add(int x,int y){int ret=x+y;if(ret>=mod)ret-=mod;return ret;}
+inline int sub(int x,int y){int ret=x-y;if(ret<0)ret+=mod;return ret;}
+inline int mul(int x,int y){return ((ll)x*y)%mod;}
+inline int step(int base,int pw){int ret=1;while(pw){if(pw&1)ret=mul(ret,base);base=mul(base,base);pw>>=1;}return ret;}
+inline int invv(int x){return step(x,mod-2);}
 
+const int maxn=3e5+10;
 int n;
-int A[maxn][2][2],B[maxn][2][2],C[maxn][2][2];
-ll a[(1<<maxn)],b[(1<<maxn)];
 
-void ispis(int a[2][2]){
-    printf("%d %d\n%d %d  MAT\n",a[0][0],a[0][1],a[1][0],a[1][1]);
-}
+struct trans{
 
-int det(int A[2][2]){
-    return A[0][0]*A[1][1]-A[0][1]*A[1][0];
-}
-bool unit_holds(int f[2][2],int A[2][2],int B[2][2],int C[2][2]){
+    ll a[2][2];
 
-    for(int i=0;i<2;i++)
-        for(int j=0;j<2;j++)
-            for(int k=0;k<2;k++)
-                if(A[i][j]*B[i][k]!=C[i][f[j][k]])return false;
 
-    return true;
-}
-void invert_matrix(int A[2][2]){/// inverses the matrix, but multiplies coefficients by 2, 
-                                /// so we can kepp using int, take care to divide by 2 when doing the fft
+    trans get_inv();
 
-    int ret[2][2];
-    int d=det(A);
-
-    ret[0][0]=(A[1][1]*2)/d;
-    ret[0][1]=-(A[0][1]*2)/d;
-    ret[1][0]=-(A[1][0]*2)/d;
-    ret[1][1]=(A[0][0]*2)/d;
-
-    for(int i=0;i<2;i++)
-        for(int j=0;j<2;j++)
-            A[i][j]=ret[i][j];
-}
-
-void make_convolution_matrices(int f[2][2],int A[2][2],int B[2][2],int C[2][2]){
-
-    int n=1;
-    for(int i=1;i<=12;i++)n*=3;
-
-    for(int mask=0;mask<n;mask++){
-
-        int pmask=mask;
-        int cx=0;
-        int cy=0;
-        for(int i=0;i<12;i++){
-            int x=pmask%3-1;
-            pmask/=3;
-
-            if(i<4)A[cx][cy]=x;
-            else if(i<8)B[cx][cy]=x;
-            else C[cx][cy]=x;
-
-            cy++;
-            if(cy>1){cy=0;cx++;}
-            if(cx>1)cx=0;
+    void ispis(){
+        for(int i=0;i<2;i++){
+            for(int j=0;j<2;j++)printf("%lld ",a[i][j]);
+            printf("\n");
         }
-
-        int d=det(C);
-        if(d==0)continue;
-
-        if(unit_holds(f,A,B,C))break;
+        printf("ISPIS\n");
     }
 
-    invert_matrix(C);
+};
+int det(trans c){
+    return c.a[0][0]*c.a[1][1]-c.a[1][0]*c.a[0][1];
+}
+trans trans::get_inv(){
+
+    trans ret=(*this);
+
+    swap(ret.a[0][0],ret.a[1][1]);
+    ret.a[1][0]=-ret.a[1][0];
+    ret.a[0][1]=-ret.a[0][1];
+
+    for(int i=0;i<2;i++)
+        for(int j=0;j<2;j++)ret.a[i][j]*=2;
+
+    int d=det(*this);
+    for(int i=0;i<2;i++)
+        for(int j=0;j<2;j++)ret.a[i][j]/=d;
+
+    return ret;
+}
+struct ftrans{
+    trans a,b,c;
+
+    void ispis(){
+
+        a.ispis();
+        b.ispis();
+        c.ispis();
+        printf("FTRANS ISPIS\n");
+
+    }
+
+};
+
+bool check(trans a,trans b,trans c,trans f){
+
+    if(det(c)==0)return false;
+
+    for(int i=0;i<2;i++)
+    for(int j=0;j<2;j++){
+        int sum=0;
+        for(int k=0;k<2;k++){
+            sum=a.a[i][k]*b.a[j][k];
+            if(sum!=c.a[f.a[i][j]][k])return false;
+        }
+    }
+    return true;
 }
 
-void fft(ll a[],int T[][2][2],int bit,bool inverse){
+int pw3=531441;
+ftrans get_trans(trans f){
 
-    int n=(1<<(bit+1));
+    for(int i=0;i<pw3;i++){
 
-    for(int len=n;len>1;len>>=1,bit--){
+        trans a,b,c;
+        int mask=i;
+        for(int j=0;j<2;j++)
+            for(int k=0;k<2;k++){
+                a.a[j][k]=mask%3-1;
+                mask/=3;
+            }
 
-        int hlen=(len/2);
+        for(int j=0;j<2;j++)
+            for(int k=0;k<2;k++){
+                b.a[j][k]=mask%3-1;
+                mask/=3;
+            }
 
+        for(int j=0;j<2;j++)
+            for(int k=0;k<2;k++){
+                c.a[j][k]=mask%3-1;
+                mask/=3;
+            }
+
+        if(check(a,b,c,f))return {a,b,c};
+
+    }
+
+    ///printf("AAAAAAAAAAAAAAAAAAA\n");
+
+}
+
+
+void fft(vector<ll>&a,vector<trans>tr,bool invert){
+
+    int n=a.size();
+    int cid=0;
+    for(int len=2;len<=n;len<<=1){
+
+        trans pom=tr[cid];
+        int hlen=len/2;
         for(int i=0;i<n;i+=len){
-
             for(int j=0;j<hlen;j++){
 
                 ll pom1=a[i+j];
                 ll pom2=a[i+j+hlen];
 
-                a[i+j]=pom1*T[bit][0][0]+pom2*T[bit][0][1];
-                a[i+j+hlen]=pom1*T[bit][1][0]+pom2*T[bit][1][1];
+                a[i+j]=pom1*pom.a[0][0]+pom2*pom.a[1][0];
+                a[i+j+hlen]=pom1*pom.a[0][1]+pom2*pom.a[1][1];
 
-                if(inverse){
+                if(invert){
                     a[i+j]/=2;
                     a[i+j+hlen]/=2;
                 }
             }
-
         }
 
+        cid++;
     }
 
 }
+vector<ll>convolute(vector<ll>a,vector<ll>b,vector<ftrans>f){
 
-void mul(ll a[],ll b[],ll m){
-    int n=(1<<m);
-    fft(a,A,m-1,0);
-    fft(b,B,m-1,0);
-    for(int i=0;i<n;i++)a[i]*=b[i];
-    fft(a,C,m-1,1);
+    vector<trans>pom;
+    for(int i=0;i<f.size();i++)pom.pb(f[i].a);
+    fft(a,pom,0);
+
+    pom.clear();
+    for(int i=0;i<f.size();i++)pom.pb(f[i].b);
+    fft(b,pom,0);
+
+    for(int i=0;i<a.size();i++)a[i]*=b[i];
+
+    pom.clear();
+    for(int i=0;i<f.size();i++)pom.pb(f[i].c.get_inv());
+    fft(a,pom,1);
+
+    return a;
 }
 
-
 int main(){
+
 
     ///freopen("test.txt","r",stdin);
 
     scanf("%d",&n);
-
+    vector<trans>f;
     for(int i=0;i<n;i++){
+
         string s;
         cin>>s;
-        int niz[2][2];
+        trans pom;
+        for(int j=0;j<4;j++){
+            pom.a[j/2][j%2]=s[j]-'0';
+        }
 
-        niz[0][0]=s[0]-48;
-        niz[0][1]=s[1]-48;
-        niz[1][0]=s[2]-48;
-        niz[1][1]=s[3]-48;
-
-        make_convolution_matrices(niz,A[i],B[i],C[i]);
+        f.pb(pom);
     }
 
-    for(int i=0;i<(1<<n);i++)
-        scanf("%lld",&a[i]);
-    for(int i=0;i<(1<<n);i++)
-        scanf("%lld",&b[i]);
-
-    mul(a,b,n);
-
+    vector<ll>a,b;
     for(int i=0;i<(1<<n);i++){
-        printf("%lld ",a[i]);
+        int cc;
+        scanf("%d",&cc);
+        a.pb(cc);
+    }
+    for(int i=0;i<(1<<n);i++){
+        int cc;
+        scanf("%d",&cc);
+        b.pb(cc);
     }
 
-return 0;
+    vector<ftrans> t;
+    for(int i=0;i<n;i++){
+        t.pb(get_trans(f[i]));
+        ///t.back().ispis();
+    }
+
+    a=convolute(a,b,t);
+
+    for(int i=0;i<a.size();i++)printf("%lld ",a[i]);
+
+    return 0;
 }
