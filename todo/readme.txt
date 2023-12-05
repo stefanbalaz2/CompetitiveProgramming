@@ -24,6 +24,7 @@ https://codeforces.com/blog/entry/121012    lucas theorem tricks
 todo
 
 
+https://codeforces.com/blog/entry/111566    faster moduo
 https://codeforces.com/blog/entry/120841    edge centroid decomp
 https://codeforces.com/blog/entry/91632?#comment-802482 dirichlet for prime counting and link to dirichlet fast operations
 https://codeforces.com/blog/entry/92128    formal power series on sets
