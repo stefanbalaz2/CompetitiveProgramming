@@ -311,6 +311,13 @@ namespace polynomial{
 
         }
 
+        polyn shift_left(int x){
+            polyn ret=(*this);
+            for(int i=0;i+x<ret.size();i++)ret[i]=ret[i+x];
+            ret.resize(ret.size()-x);
+            return ret;
+        }
+
 
         void ispis(){
             for(int i=0;i<a.size();i++)printf("%d ",a[i]);
