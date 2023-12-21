@@ -18,6 +18,8 @@ namespace polynomial{
     const int maxn=(1<<20);
     int proot=step(3,7*17*8);
     int prekw[maxn];
+    int prekinv[maxn];
+    int INF=1e9;
     bool prek_flag=0;
     void prek(){
 
@@ -27,6 +29,17 @@ namespace polynomial{
         prekw[0]=1;
         for(int i=1;i<maxn;i++)
             prekw[i]=mul(prekw[i-1],proot);
+
+
+        prekinv[0]=1;
+        for(int i=1;i<maxn;i++)prekinv[i]=mul(prekinv[i-1],i);
+
+        int curr=invv(prekinv[maxn-1]);
+        for(int i=maxn-1;i>0;i--){
+            prekinv[i]=mul(curr,prekinv[i-1]);
+            curr=mul(curr,i);
+        }
+
     }
     const int MAGIC=500;
 
@@ -56,10 +69,29 @@ namespace polynomial{
             return ret;
         }
 
+        polyn operator +(polyn b){
+            polyn ret;
+            ret.resize(max(b.size(),(int)a.size()));
+            for(int i=0;i<a.size();i++)ret[i]=add(ret[i],a[i]);
+            for(int i=0;i<b.size();i++)ret[i]=add(ret[i],b[i]);
+            return ret;
+        }
+
+        polyn operator *(int c){
+            polyn ret=(*this);
+            for(int i=0;i<ret.size();i++)ret[i]=mul(ret[i],c);
+            return ret;
+        }
+
+        friend polyn operator *(const int c,polyn p){
+            return p*c;
+        }
+
+
         void fft(vector<int>&a,bool invert){
 
             prek();
-            
+
             int n=a.size();
             int j=0;
             for(int i=1;i<n;i++){
@@ -123,6 +155,18 @@ namespace polynomial{
         polyn mod_xk(int n){
             polyn ret(a);
             ret.resize(n);
+            return ret;
+        }
+
+        polyn mul_xk(int n){
+
+            polyn ret=(*this);
+
+            int pom=ret.size();
+            ret.resize(ret.size()+n);
+
+            for(int i=ret.size()-1;i>=n;i--)ret[i]=ret[i-n];
+            for(int i=0;i<n;i++)ret[i]=0;
             return ret;
         }
 
@@ -216,6 +260,56 @@ namespace polynomial{
             return ret;
         }
 
+        polyn integral(){
+
+            polyn ret=(*this);
+
+            prek();
+
+            ret.a.resize(a.size()+1);
+            for(int i=ret.a.size()-2;i>=0;i--){
+                ret.a[i+1]=mul(ret.a[i],prekinv[i+1]);
+            }
+            ret.a[0]=0;
+
+            return ret;
+        }
+
+        polyn deriv(){
+
+            polyn ret=(*this);
+
+            for(int i=0;i<ret.a.size()-1;i++){
+                ret.a[i]=mul(i+1,ret.a[i+1]);
+            }
+            ret.a.pop_back();
+
+            return ret;
+        }
+
+        polyn log(int n){
+            assert(a[0]==1);
+            return (deriv().mod_xk(n)*inv(n)).mod_xk(n).integral().mod_xk(n);
+        }
+
+        polyn exp(int n){
+
+            assert(a[0]==0);
+
+            int sz=1;
+            polyn bk;
+            bk[0]=1;
+
+            while(sz<n){
+                sz<<=1;
+                polyn pom=mod_xk(sz)-bk.log(sz);
+                pom[0]=add(pom[0],1);
+                bk=(bk*pom).mod_xk(sz);
+            }
+
+            return bk.mod_xk(n);
+
+        }
 
 
         void ispis(){
