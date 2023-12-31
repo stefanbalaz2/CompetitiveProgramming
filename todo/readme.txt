@@ -19,6 +19,7 @@ https://codeforces.com/blog/entry/62393    unordered map
 https://codeforces.com/blog/entry/21853    unordered map
 https://codeforces.com/blog/entry/61675    improving randomized solutions
 https://codeforces.com/blog/entry/121012    lucas theorem tricks
+https://codeforces.com/blog/entry/120841    edge centroid decomp
 
 
 todo
@@ -27,7 +28,6 @@ https://courses.engr.illinois.edu/cs498dl1/sp2015/notes/25-maxflowext.pdf    min
 https://maspypy.com/%E5%A4%9A%E9%A0%85%E5%BC%8F%E3%83%BB%E5%BD%A2%E5%BC%8F%E7%9A%84%E3%81%B9%E3%81%8D%E7%B4%9A%E6%95%B0-%E9%AB%98%E9%80%9F%E3%81%AB%E8%A8%88%E7%AE%97%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%82%E3%81%AE    polynomials
 https://qiita.com/hotman78/items/b8986a23b8fdfe25c9fb#polynomial    a lot of asian stuff
 https://codeforces.com/blog/entry/111566    faster moduo
-https://codeforces.com/blog/entry/120841    edge centroid decomp
 https://codeforces.com/blog/entry/91632?#comment-802482 dirichlet for prime counting and link to dirichlet fast operations
 https://codeforces.com/blog/entry/92128    formal power series on sets
 https://codeforces.com/blog/entry/122195    series and bin exp
