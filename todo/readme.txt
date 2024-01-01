@@ -20,6 +20,7 @@ https://codeforces.com/blog/entry/21853    unordered map
 https://codeforces.com/blog/entry/61675    improving randomized solutions
 https://codeforces.com/blog/entry/121012    lucas theorem tricks
 https://codeforces.com/blog/entry/120841    edge centroid decomp
+https://codeforces.com/blog/entry/122195    series and bin exp
 
 
 todo
@@ -30,7 +31,6 @@ https://qiita.com/hotman78/items/b8986a23b8fdfe25c9fb#polynomial    a lot of asi
 https://codeforces.com/blog/entry/111566    faster moduo
 https://codeforces.com/blog/entry/91632?#comment-802482 dirichlet for prime counting and link to dirichlet fast operations
 https://codeforces.com/blog/entry/92128    formal power series on sets
-https://codeforces.com/blog/entry/122195    series and bin exp
 https://cp-tricki.github.io/combinatorics/One%20can%20use%20determinants%20to%20count%20lattice%20paths/    determinant for latice paths
 https://oi-wiki.org/                        kineski OI materijali
 https://www.dropbox.com/s/2ubl00x2zzkojsr/dominator.pdf?dl=0    dominator tree
