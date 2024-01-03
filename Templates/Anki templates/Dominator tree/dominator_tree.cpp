@@ -1,6 +1,9 @@
 /**
 
     problem: https://www.codechef.com/problems/GRAPHCNT?tab=statement
+
+    OBAVEZNO PROCISTI GRAF OD NONREACHABLE NODES JER CES DOBITI MLE/RTE
+    
 */
 
 #include<bits/stdc++.h>
