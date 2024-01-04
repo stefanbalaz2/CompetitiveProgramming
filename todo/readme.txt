@@ -28,6 +28,7 @@ https://codeforces.com/blog/entry/118706    observations
 https://codeforces.com/blog/entry/118836    games
 https://codeforces.com/blog/entry/111217    common mistakes
 https://codeforces.com/blog/entry/103222    slope trick
+https://mzhang2021.github.io/cp-blog/burnside/    burnside
 
 
 todo
@@ -56,7 +57,6 @@ https://codeforces.com/blog/entry/117783    dirihlet 0
 https://codeforces.com/blog/entry/49691
 https://codeforces.com/blog/entry/61203     mo optimisation
 https://mzhang2021.github.io/cp-blog/kruskal/
-https://mzhang2021.github.io/cp-blog/burnside/
 https://codeforces.com/blog/entry/117814    floyd warshall
 
 https://codeforces.com/blog/entry/60737
