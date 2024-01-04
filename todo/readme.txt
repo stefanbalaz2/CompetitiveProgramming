@@ -58,6 +58,7 @@ https://codeforces.com/blog/entry/49691
 https://codeforces.com/blog/entry/61203     mo optimisation
 https://mzhang2021.github.io/cp-blog/kruskal/
 https://codeforces.com/blog/entry/117814    floyd warshall
+https://web.archive.org/web/20210511092429/http://www.serbanology.com/    aliens trick
 
 https://codeforces.com/blog/entry/60737
 
