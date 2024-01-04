@@ -26,6 +26,7 @@ https://www.cs.princeton.edu/courses/archive/spr11/cos423/Lectures/DominatorsA.p
 https://codeforces.com/blog/entry/118984    burnside i polya
 https://codeforces.com/blog/entry/118706    observations
 https://codeforces.com/blog/entry/118836    games
+https://codeforces.com/blog/entry/111217    common mistakes
 
 
 todo
@@ -40,7 +41,6 @@ https://cp-tricki.github.io/combinatorics/One%20can%20use%20determinants%20to%20
 https://oi-wiki.org/                        kineski OI materijali
 https://codeforces.com/blog/entry/117237    GF vezbice
 https://codeforces.com/blog/entry/103222    slope trick
-https://codeforces.com/blog/entry/111217    common mistakes
 https://codeforces.com/blog/entry/118391    simulate min cost flow
 https://codeforces.com/blog/entry/117906    stirling numbers
 https://codeforces.com/blog/entry/118018    eval and interpolate on geometric progression
