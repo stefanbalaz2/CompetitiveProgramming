@@ -31,6 +31,9 @@ https://codeforces.com/blog/entry/103222    slope trick
 https://mzhang2021.github.io/cp-blog/burnside/    burnside
 https://codeforces.com/blog/entry/118391    simulate min cost flow
 https://courses.engr.illinois.edu/cs498dl1/sp2015/notes/25-maxflowext.pdf    mincost circulation
+https://codeforces.com/blog/entry/117906    stirling numbers
+
+
 
 
 todo
@@ -43,7 +46,6 @@ https://codeforces.com/blog/entry/92128    formal power series on sets
 https://cp-tricki.github.io/combinatorics/One%20can%20use%20determinants%20to%20count%20lattice%20paths/    determinant for latice paths
 https://oi-wiki.org/                        kineski OI materijali
 https://codeforces.com/blog/entry/117237    GF vezbice
-https://codeforces.com/blog/entry/117906    stirling numbers
 https://codeforces.com/blog/entry/118018    eval and interpolate on geometric progression
 https://codeforces.com/blog/entry/118098    adamant - dinitz on bipartite
 https://codeforces.com/blog/entry/80383     link cut
