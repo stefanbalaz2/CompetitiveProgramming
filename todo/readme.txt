@@ -64,6 +64,7 @@ https://codeforces.com/blog/entry/117814    floyd warshall
 https://web.archive.org/web/20210511092429/http://www.serbanology.com/    aliens trick
 https://mamnoonsiam.github.io/posts/attack-on-aliens.html aliens
 https://codeforces.com/blog/entry/124438    solving reccurences
+                                            palindromic tree
 
 https://codeforces.com/blog/entry/60737
 
