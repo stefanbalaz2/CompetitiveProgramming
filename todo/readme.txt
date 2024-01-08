@@ -37,6 +37,7 @@ https://codeforces.com/blog/entry/118098    adamant - dinitz on bipartite
 https://codeforces.com/blog/entry/119855    dp stuff
 https://codeforces.com/blog/entry/93772    1d1d optimization dp
                                             manacher
+https://codeforces.com/blog/entry/49691
 
 
 
@@ -57,7 +58,6 @@ https://codeforces.com/blog/entry/61203     new mo sort
 https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
 https://codeforces.com/blog/entry/117635    dirihlet 1
 https://codeforces.com/blog/entry/117783    dirihlet 0
-https://codeforces.com/blog/entry/49691
 https://codeforces.com/blog/entry/61203     mo optimisation
 https://mzhang2021.github.io/cp-blog/kruskal/
 https://codeforces.com/blog/entry/117814    floyd warshall
