@@ -60,6 +60,7 @@ https://codeforces.com/blog/entry/49691
 https://codeforces.com/blog/entry/61203     mo optimisation
 https://mzhang2021.github.io/cp-blog/kruskal/
 https://codeforces.com/blog/entry/117814    floyd warshall
+https://codeforces.com/blog/entry/93772    1d1d optimization dp
 https://web.archive.org/web/20210511092429/http://www.serbanology.com/    aliens trick
 https://mamnoonsiam.github.io/posts/attack-on-aliens.html aliens
 https://codeforces.com/blog/entry/124438    solving reccurences
