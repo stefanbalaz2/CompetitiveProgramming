@@ -34,6 +34,7 @@ https://courses.engr.illinois.edu/cs498dl1/sp2015/notes/25-maxflowext.pdf    min
 https://codeforces.com/blog/entry/117906    stirling numbers
 https://codeforces.com/blog/entry/118018    eval and interpolate on geometric progression
 https://codeforces.com/blog/entry/118098    adamant - dinitz on bipartite
+https://codeforces.com/blog/entry/119855    dp stuff
 
 
 
@@ -50,7 +51,6 @@ https://oi-wiki.org/                        kineski OI materijali
 https://codeforces.com/blog/entry/117237    GF vezbice
 https://codeforces.com/blog/entry/80383     link cut
 https://codeforces.com/blog/entry/82094     kinetic segtree
-https://codeforces.com/blog/entry/119855    dp stuff
 https://codeforces.com/blog/entry/61203     new mo sort
 https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
                                             manacher
