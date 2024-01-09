@@ -43,6 +43,7 @@ https://codeforces.com/blog/entry/117814    floyd warshall
 https://web.archive.org/web/20210511092429/http://www.serbanology.com/    aliens trick
 https://mamnoonsiam.github.io/posts/attack-on-aliens.html aliens
 https://codeforces.com/blog/entry/82094     kinetic segtree
+https://codeforces.com/blog/entry/13959     palindromic tree
 
 
 
@@ -64,7 +65,6 @@ https://codeforces.com/blog/entry/117635    dirihlet 1
 https://codeforces.com/blog/entry/117783    dirihlet 0
 https://codeforces.com/blog/entry/61203     mo optimisation
 https://codeforces.com/blog/entry/124438    solving reccurences
-                                            palindromic tree
 
 https://codeforces.com/blog/entry/60737
 
