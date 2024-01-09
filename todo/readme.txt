@@ -42,6 +42,7 @@ https://mzhang2021.github.io/cp-blog/kruskal/    KRT
 https://codeforces.com/blog/entry/117814    floyd warshall
 https://web.archive.org/web/20210511092429/http://www.serbanology.com/    aliens trick
 https://mamnoonsiam.github.io/posts/attack-on-aliens.html aliens
+https://codeforces.com/blog/entry/82094     kinetic segtree
 
 
 
@@ -57,7 +58,6 @@ https://cp-tricki.github.io/combinatorics/One%20can%20use%20determinants%20to%20
 https://oi-wiki.org/                        kineski OI materijali
 https://codeforces.com/blog/entry/117237    GF vezbice
 https://codeforces.com/blog/entry/80383     link cut
-https://codeforces.com/blog/entry/82094     kinetic segtree
 https://codeforces.com/blog/entry/61203     new mo sort
 https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
 https://codeforces.com/blog/entry/117635    dirihlet 1
