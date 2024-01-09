@@ -40,6 +40,8 @@ https://codeforces.com/blog/entry/93772    1d1d optimization dp
 https://codeforces.com/blog/entry/49691    dp 2 dimension reduction with aliens
 https://mzhang2021.github.io/cp-blog/kruskal/    KRT
 https://codeforces.com/blog/entry/117814    floyd warshall
+https://web.archive.org/web/20210511092429/http://www.serbanology.com/    aliens trick
+https://mamnoonsiam.github.io/posts/attack-on-aliens.html aliens
 
 
 
@@ -61,8 +63,6 @@ https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
 https://codeforces.com/blog/entry/117635    dirihlet 1
 https://codeforces.com/blog/entry/117783    dirihlet 0
 https://codeforces.com/blog/entry/61203     mo optimisation
-https://web.archive.org/web/20210511092429/http://www.serbanology.com/    aliens trick
-https://mamnoonsiam.github.io/posts/attack-on-aliens.html aliens
 https://codeforces.com/blog/entry/124438    solving reccurences
                                             palindromic tree
 
