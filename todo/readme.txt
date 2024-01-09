@@ -44,6 +44,7 @@ https://web.archive.org/web/20210511092429/http://www.serbanology.com/    aliens
 https://mamnoonsiam.github.io/posts/attack-on-aliens.html aliens
 https://codeforces.com/blog/entry/82094     kinetic segtree
 https://codeforces.com/blog/entry/13959     palindromic tree
+https://cp-tricki.github.io/combinatorics/One%20can%20use%20determinants%20to%20count%20lattice%20paths/    determinant for latice paths
 
 
 
@@ -55,7 +56,6 @@ https://qiita.com/hotman78/items/b8986a23b8fdfe25c9fb#polynomial    a lot of asi
 https://codeforces.com/blog/entry/111566    faster moduo
 https://codeforces.com/blog/entry/91632?#comment-802482 dirichlet for prime counting and link to dirichlet fast operations
 https://codeforces.com/blog/entry/92128    formal power series on sets
-https://cp-tricki.github.io/combinatorics/One%20can%20use%20determinants%20to%20count%20lattice%20paths/    determinant for latice paths
 https://oi-wiki.org/                        kineski OI materijali
 https://codeforces.com/blog/entry/117237    GF vezbice
 https://codeforces.com/blog/entry/80383     link cut
