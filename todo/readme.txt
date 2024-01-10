@@ -64,6 +64,8 @@ https://codeforces.com/blog/entry/80383     link cut
 https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
 https://codeforces.com/blog/entry/117635    dirihlet 1
 https://codeforces.com/blog/entry/117783    dirihlet 0
+https://codeforces.com/blog/entry/53925 mobius
+https://codeforces.com/blog/entry/54150 dirichlet
 https://codeforces.com/blog/entry/124438    solving reccurences
                                             lyndons
                                             blossoms
