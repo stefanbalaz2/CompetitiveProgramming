@@ -67,6 +67,7 @@ https://codeforces.com/blog/entry/117783    dirihlet 0
 https://codeforces.com/blog/entry/124438    solving reccurences
                                             lyndons
                                             blossoms
+                                            otkucaj MPM 
 
 https://codeforces.com/blog/entry/60737
 
