@@ -45,6 +45,8 @@ https://mamnoonsiam.github.io/posts/attack-on-aliens.html aliens
 https://codeforces.com/blog/entry/82094     kinetic segtree
 https://codeforces.com/blog/entry/13959     palindromic tree
 https://cp-tricki.github.io/combinatorics/One%20can%20use%20determinants%20to%20count%20lattice%20paths/    determinant for latice paths
+https://codeforces.com/blog/entry/61203     new mo sort
+https://codeforces.com/blog/entry/61203     mo optimisation
 
 
 
@@ -59,11 +61,9 @@ https://codeforces.com/blog/entry/92128    formal power series on sets
 https://oi-wiki.org/                        kineski OI materijali
 https://codeforces.com/blog/entry/117237    GF vezbice
 https://codeforces.com/blog/entry/80383     link cut
-https://codeforces.com/blog/entry/61203     new mo sort
 https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
 https://codeforces.com/blog/entry/117635    dirihlet 1
 https://codeforces.com/blog/entry/117783    dirihlet 0
-https://codeforces.com/blog/entry/61203     mo optimisation
 https://codeforces.com/blog/entry/124438    solving reccurences
 
 https://codeforces.com/blog/entry/60737
