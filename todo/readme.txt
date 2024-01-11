@@ -47,6 +47,7 @@ https://codeforces.com/blog/entry/13959     palindromic tree
 https://cp-tricki.github.io/combinatorics/One%20can%20use%20determinants%20to%20count%20lattice%20paths/    determinant for latice paths
 https://codeforces.com/blog/entry/61203     new mo sort
 https://codeforces.com/blog/entry/61203     mo optimisation
+https://codeforces.com/blog/entry/54090     linear sieve
 
 
 
@@ -67,7 +68,6 @@ https://codeforces.com/blog/entry/117635    dirihlet 1
 https://codeforces.com/blog/entry/117783    dirihlet 0
 https://codeforces.com/blog/entry/53925     mobius
 https://codeforces.com/blog/entry/54150     dirichlet
-https://codeforces.com/blog/entry/54090     linear sieve
 https://gbroxey.github.io/blog/2023/04/30/mult-sum-1.html    summing multiplicative functions
 
 https://codeforces.com/blog/entry/124438    solving reccurences
