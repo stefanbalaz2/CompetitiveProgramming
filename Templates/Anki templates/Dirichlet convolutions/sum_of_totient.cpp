@@ -45,8 +45,10 @@ struct mertens{
     }
 
     int get_F(ll k){
-        if(n/k<=y)return F[n/k];
-        return a[a.size()-k];
+        int ret;
+        if(n/k<=y)ret=F[n/k];
+        else ret=a[a.size()-k];
+        return ret;
     }
 
     void do_sieve(){
@@ -155,12 +157,20 @@ struct phi{
             }
             for(int j=0;j<primes.size() && i*primes[j]<=y;j++){
                 composite[i*primes[j]]=1;
-                f[i*primes[j]]=f[i]*primes[j];
-                if(i%primes[j]==0)break;
+                if(i%primes[j]==0){
+                    f[i*primes[j]]=f[i]*primes[j];
+                    break;
+                }
+                else{
+                    f[i*primes[j]]=f[i]*f[primes[j]];
+                }
             }
         }
 
-        for(int i=1;i<=y;i++)F[i]=add(f[i],F[i-1]);
+        for(int i=1;i<=y;i++){
+            f[i]%=mod;
+            F[i]=add(f[i],F[i-1]);
+        }
 
     }
 
@@ -175,9 +185,9 @@ struct phi{
             ret=add(ret,mul(m.f[i],id.F(cn/i)));
             ret=add(ret,mul(m.get_F(k*i),id.f(i)));
         }
-
-        assert((n/k)/(n/(k*b))==b);
-        ret=sub(ret,mul(m.get_F(n/(b*k)),id.F(b)));
+        ll ts=cn;
+        assert(n/((ts/b)*k)==b);
+        ret=sub(ret,mul(m.get_F( (ts/b)*k ),id.F(b)));
 
         return ret;
     }
@@ -199,16 +209,30 @@ struct phi{
 
 };
 
+
 int main(){
 
-   /// freopen("test.txt","r",stdin);
+    ///freopen("test.txt","r",stdin);
 
     scanf("%lld",&n);
     mertens m(n);
 
     phi p(n,m);
 
-    printf("%d\n",p.get_F(1));
+    int ret=0;
+
+    identity id;
+
+    ll b=sqrt(n);
+    for(int i=1;i<=b;i++){
+        ret=add(ret, mul(id.f(i),p.get_F(i) ));
+        ret=add(ret,mul(id.F(n/i),p.f[i]) );
+    }
+
+    assert(n/(n/b)==b);
+    ret=sub(ret, mul(id.F(b), p.get_F(n/b) ) );
+
+    printf("%d\n",ret);
 
     return 0;
 }
