@@ -125,26 +125,90 @@ struct identity{
 
 };
 
+struct phi{
+
+    vector<int>f,F,a;
+    ll n,y,k;
+
+    phi(ll n,mertens &m){
+
+        this->n=n;
+        y=pow(n,0.67);
+        k=n/y;
+
+        f.resize(y+1);
+        F.resize(y+1);
+
+        do_sieve();
+        precalc(m);
+    }
+
+    void do_sieve(){
+
+        vector<int>primes;
+        vector<bool>composite(y+1);
+        f[1]=1;
+        for(int i=2;i<=y;i++){
+            if(!composite[i]){
+                f[i]=i-1;
+                primes.pb(i);
+            }
+            for(int j=0;j<primes.size() && i*primes[j]<=y;j++){
+                composite[i*primes[j]]=1;
+                f[i*primes[j]]=f[i]*primes[j];
+                if(i%primes[j]==0)break;
+            }
+        }
+
+        for(int i=1;i<=y;i++)F[i]=add(f[i],F[i-1]);
+
+    }
+
+    int calc_F(ll k,mertens &m){
+
+        int ret=0;
+
+        identity id;
+        ll cn=n/k;
+        ll b=sqrt(cn);
+        for(int i=1;i<=b;i++){
+            ret=add(ret,mul(m.f[i],id.F(cn/i)));
+            ret=add(ret,mul(m.get_F(k*i),id.f(i)));
+        }
+
+        assert((n/k)/(n/(k*b))==b);
+        ret=sub(ret,mul(m.get_F(n/(b*k)),id.F(b)));
+
+        return ret;
+    }
+
+    int get_F(ll k){
+        if(n/k<=y)return F[n/k];
+        return a[k-1];
+    }
+
+    void precalc(mertens &m){
+
+        a.resize(k);
+        int pt=0;
+        for(int i=1;i<=k;i++){
+            a[pt++]=calc_F(i,m);
+        }
+
+    }
+
+};
 
 int main(){
 
-    ///freopen("test.txt","r",stdin);
+   /// freopen("test.txt","r",stdin);
 
     scanf("%lld",&n);
     mertens m(n);
 
-    int ret=0;
+    phi p(n,m);
 
-    identity id;
-
-    ll b=sqrt(n);
-    for(int i=1;i<=b;i++){
-        ret=add(ret,mul(id.f(i),m.get_F(i) ));
-        ret=add(ret,mul(id.F(n/i),m.f[i] ));
-    }
-    ret=sub(ret,mul( id.F(b),m.get_F(n/b) ));
-
-    printf("%d\n",ret);
+    printf("%d\n",p.get_F(1));
 
     return 0;
 }
