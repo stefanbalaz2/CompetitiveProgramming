@@ -72,8 +72,8 @@ https://codeforces.com/blog/entry/54150     dirichlet
 https://gbroxey.github.io/blog/2023/04/30/mult-sum-1.html    summing multiplicative functions
 
 https://codeforces.com/blog/entry/124438    solving reccurences
-                                            lyndons
-                                            blossoms
+https://codeforces.com/blog/entry/89629     lyndons
+https://codeforces.com/blog/entry/92339     blossoms
                                             otkucaj MPM 
 https://cp-algorithms.com/graph/hungarian-algorithm.html    hungarian
 
