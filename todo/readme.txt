@@ -48,6 +48,7 @@ https://cp-tricki.github.io/combinatorics/One%20can%20use%20determinants%20to%20
 https://codeforces.com/blog/entry/61203     new mo sort
 https://codeforces.com/blog/entry/61203     mo optimisation
 https://codeforces.com/blog/entry/54090     linear sieve
+https://codeforces.com/blog/entry/117635    dirihlet 1
 
 
 
@@ -64,7 +65,7 @@ https://codeforces.com/blog/entry/117237    GF vezbice
 https://codeforces.com/blog/entry/80383     link cut
 https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
 
-https://codeforces.com/blog/entry/117635    dirihlet 1
+
 https://codeforces.com/blog/entry/117783    dirihlet 0
 https://codeforces.com/blog/entry/53925     mobius
 https://codeforces.com/blog/entry/54150     dirichlet
