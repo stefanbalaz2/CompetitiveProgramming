@@ -49,6 +49,10 @@ https://codeforces.com/blog/entry/61203     new mo sort
 https://codeforces.com/blog/entry/61203     mo optimisation
 https://codeforces.com/blog/entry/54090     linear sieve
 https://codeforces.com/blog/entry/117635    dirihlet 1
+https://codeforces.com/blog/entry/91632?#comment-802482 dirichlet for prime counting and link to dirichlet fast operations
+https://codeforces.com/blog/entry/53925     mobius
+https://codeforces.com/blog/entry/54150     dirichlet
+https://gbroxey.github.io/blog/2023/04/30/mult-sum-1.html    summing multiplicative functions
 
 
 
@@ -58,7 +62,6 @@ todo
 https://maspypy.com/%E5%A4%9A%E9%A0%85%E5%BC%8F%E3%83%BB%E5%BD%A2%E5%BC%8F%E7%9A%84%E3%81%B9%E3%81%8D%E7%B4%9A%E6%95%B0-%E9%AB%98%E9%80%9F%E3%81%AB%E8%A8%88%E7%AE%97%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%82%E3%81%AE    polynomials
 https://qiita.com/hotman78/items/b8986a23b8fdfe25c9fb#polynomial    a lot of asian stuff
 https://codeforces.com/blog/entry/111566    faster moduo
-https://codeforces.com/blog/entry/91632?#comment-802482 dirichlet for prime counting and link to dirichlet fast operations
 https://codeforces.com/blog/entry/92128    formal power series on sets
 https://oi-wiki.org/                        kineski OI materijali
 https://codeforces.com/blog/entry/117237    GF vezbice
@@ -67,9 +70,7 @@ https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
 
 
 https://codeforces.com/blog/entry/117783    dirihlet 0
-https://codeforces.com/blog/entry/53925     mobius
-https://codeforces.com/blog/entry/54150     dirichlet
-https://gbroxey.github.io/blog/2023/04/30/mult-sum-1.html    summing multiplicative functions
+
 
 https://codeforces.com/blog/entry/124438    solving reccurences
 https://codeforces.com/blog/entry/89629     lyndons
