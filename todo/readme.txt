@@ -53,6 +53,7 @@ https://codeforces.com/blog/entry/91632?#comment-802482 dirichlet for prime coun
 https://codeforces.com/blog/entry/53925     mobius
 https://codeforces.com/blog/entry/54150     dirichlet
 https://gbroxey.github.io/blog/2023/04/30/mult-sum-1.html    summing multiplicative functions
+https://codeforces.com/blog/entry/117783    dirihlet 0
 
 
 
@@ -69,7 +70,6 @@ https://codeforces.com/blog/entry/80383     link cut
 https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
 
 
-https://codeforces.com/blog/entry/117783    dirihlet 0
 
 
 https://codeforces.com/blog/entry/124438    solving reccurences
