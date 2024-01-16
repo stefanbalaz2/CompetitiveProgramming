@@ -74,7 +74,7 @@ https://codeforces.com/blog/entry/117237    GF vezbice
 https://codeforces.com/blog/entry/80383     link cut
 
 
-
+https://codeforces.com/blog/entry/124766    sorted structures
 
 https://codeforces.com/blog/entry/124438    solving reccurences
 https://codeforces.com/blog/entry/89629     lyndons
