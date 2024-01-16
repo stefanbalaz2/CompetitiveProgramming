@@ -59,7 +59,7 @@ https://courses.engr.illinois.edu/cs598csc/sp2010/Lectures/Lecture6.pdf    gomor
 https://webdocs.cs.ualberta.ca/~zacharyf/courses/combopt_2016/notes/lec5.pdf    gomoru hu
 https://webdocs.cs.ualberta.ca/~zacharyf/courses/combopt_2016/notes/lec6.pdf    gomoru hu
 https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
-
+https://en.wikipedia.org/wiki/Stoer%E2%80%93Wagner_algorithm    stoer-wagner global mincut
 
 
 
