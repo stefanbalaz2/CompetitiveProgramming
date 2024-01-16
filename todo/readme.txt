@@ -55,6 +55,10 @@ https://codeforces.com/blog/entry/53925     mobius
 https://codeforces.com/blog/entry/54150     dirichlet
 https://gbroxey.github.io/blog/2023/04/30/mult-sum-1.html    summing multiplicative functions
 https://codeforces.com/blog/entry/117783    dirihlet 0
+https://courses.engr.illinois.edu/cs598csc/sp2010/Lectures/Lecture6.pdf    gomoru hu
+https://webdocs.cs.ualberta.ca/~zacharyf/courses/combopt_2016/notes/lec5.pdf    gomoru hu
+https://webdocs.cs.ualberta.ca/~zacharyf/courses/combopt_2016/notes/lec6.pdf    gomoru hu
+https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
 
 
 
@@ -68,7 +72,6 @@ https://codeforces.com/blog/entry/92128    formal power series on sets
 https://oi-wiki.org/                        kineski OI materijali
 https://codeforces.com/blog/entry/117237    GF vezbice
 https://codeforces.com/blog/entry/80383     link cut
-https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
 
 
 
