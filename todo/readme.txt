@@ -61,6 +61,8 @@ https://webdocs.cs.ualberta.ca/~zacharyf/courses/combopt_2016/notes/lec6.pdf    
 https://codeforces.com/blog/entry/121850    global mincut i gomoru hu odavde
 https://en.wikipedia.org/wiki/Stoer%E2%80%93Wagner_algorithm    stoer-wagner global mincut
 https://codeforces.com/blog/entry/124766    sorted structures
+https://codeforces.com/blog/entry/124438    solving reccurences
+
 
 
 
@@ -76,7 +78,6 @@ https://codeforces.com/blog/entry/80383     link cut
 
 
 
-https://codeforces.com/blog/entry/124438    solving reccurences
 https://codeforces.com/blog/entry/89629     lyndons
 https://codeforces.com/blog/entry/92339     blossoms
                                             otkucaj MPM 
