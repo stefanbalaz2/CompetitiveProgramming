@@ -82,6 +82,8 @@ https://codeforces.com/blog/entry/80383     link cut
 https://codeforces.com/blog/entry/92339     blossoms
                                             otkucaj MPM 
 https://cp-algorithms.com/graph/hungarian-algorithm.html    hungarian
+https://math.mit.edu/~goemans/18433S07/arborescence.pdf     directed mst
+https://www.cs.cmu.edu/~15850/notes/lec2.pdf                directed mst
 
 https://codeforces.com/blog/entry/60737
 
