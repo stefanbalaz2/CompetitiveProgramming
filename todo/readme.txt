@@ -70,6 +70,7 @@ https://codeforces.com/blog/entry/60737     c++ stl gp_hash_table
 https://codeforces.com/blog/entry/49446     merging segment trees
 https://cp-algorithms.com/data_structures/treap.html#union    merging treaps
 https://codeforces.com/blog/entry/113041    petotrator blogs competition
+https://codeforces.com/blog/entry/111849    how to prove your solutions
 
 
 
@@ -100,7 +101,6 @@ todo:
 https://codeforces.com/blog/entry/115617    arrow product, DAG enumeration
 https://codeforces.com/blog/entry/83467     queue like undoing on DS
 https://codeforces.com/blog/entry/111117    pq-like undoing on DS
-https://codeforces.com/blog/entry/111849    how to prove your solutions
 https://codeforces.com/blog/entry/111861    centroid on graphs with cycles
 https://codeforces.com/blog/entry/48417     general ideas
 https://codeforces.com/blog/entry/100910    collection of little techniques/ procitaj u komentarima za bitsetove trick
