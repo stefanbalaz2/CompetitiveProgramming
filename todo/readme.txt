@@ -87,7 +87,8 @@ https://math.mit.edu/~goemans/18433S07/arborescence.pdf     directed mst
 https://www.cs.cmu.edu/~15850/notes/lec2.pdf                directed mst
 
 
-https://codeforces.com/blog/entry/49446
+https://codeforces.com/blog/entry/49446     merging segment trees
+                                            merging treaps
 
 https://codeforces.com/blog/entry/115696    polynomial sampling shift
 
