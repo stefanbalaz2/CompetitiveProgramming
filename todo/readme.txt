@@ -66,6 +66,7 @@ https://codeforces.com/blog/entry/89629     lyndons
 https://codeforces.com/blog/entry/92339     blossoms
                                             otkucaj MPM 
 https://cp-algorithms.com/graph/hungarian-algorithm.html    hungarian
+https://codeforces.com/blog/entry/60737     c++ stl gp_hash_table
 
 
 
@@ -85,7 +86,6 @@ https://codeforces.com/blog/entry/80383     link cut
 https://math.mit.edu/~goemans/18433S07/arborescence.pdf     directed mst
 https://www.cs.cmu.edu/~15850/notes/lec2.pdf                directed mst
 
-https://codeforces.com/blog/entry/60737
 
 https://codeforces.com/blog/entry/49446
 
