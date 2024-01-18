@@ -67,6 +67,8 @@ https://codeforces.com/blog/entry/92339     blossoms
                                             otkucaj MPM 
 https://cp-algorithms.com/graph/hungarian-algorithm.html    hungarian
 https://codeforces.com/blog/entry/60737     c++ stl gp_hash_table
+https://codeforces.com/blog/entry/49446     merging segment trees
+https://cp-algorithms.com/data_structures/treap.html#union    merging treaps
 
 
 
@@ -87,8 +89,7 @@ https://math.mit.edu/~goemans/18433S07/arborescence.pdf     directed mst
 https://www.cs.cmu.edu/~15850/notes/lec2.pdf                directed mst
 
 
-https://codeforces.com/blog/entry/49446     merging segment trees
-                                            merging treaps
+
 
 https://codeforces.com/blog/entry/115696    polynomial sampling shift
 
