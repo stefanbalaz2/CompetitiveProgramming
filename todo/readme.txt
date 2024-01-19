@@ -72,6 +72,7 @@ https://cp-algorithms.com/data_structures/treap.html#union    merging treaps
 https://codeforces.com/blog/entry/113041    petotrator blogs competition
 https://codeforces.com/blog/entry/111849    how to prove your solutions
 https://codeforces.com/blog/entry/48417     general ideas
+https://codeforces.com/blog/entry/111380    variations of string matching
 
 
 
@@ -104,7 +105,6 @@ https://codeforces.com/blog/entry/83467     queue like undoing on DS
 https://codeforces.com/blog/entry/111117    pq-like undoing on DS
 https://codeforces.com/blog/entry/111861    centroid on graphs with cycles
 https://codeforces.com/blog/entry/100910    collection of little techniques/ procitaj u komentarima za bitsetove trick
-https://codeforces.com/blog/entry/111380    variations of string matching
 https://codeforces.com/blog/entry/111399    online fft
 https://codeforces.com/blog/entry/91707     Number theory — Storing information about multiples/divisors
 https://codeforces.com/blog/entry/99598     moment generating functions and q-analogs
