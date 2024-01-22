@@ -82,6 +82,7 @@ https://codeforces.com/blog/entry/100910    collection of little techniques/ pro
 https://codeforces.com/blog/entry/47764     dp tricks
 https://codeforces.com/blog/entry/71097     randomized
 https://codeforces.com/blog/entry/98386   Lagrange interpolation and partial fraction decomposition
+https://codeforces.com/blog/entry/66040   The Intuition Behind NIM and Grundy Numbers in Combinatorial Game Theory
 
 
 
@@ -125,6 +126,5 @@ https://codeforces.com/blog/entry/99598     moment generating functions and q-an
 https://codeforces.com/blog/entry/76447     ode, generating functions
 
 https://codeforces.com/blog/entry/108395  lattice paths
-https://codeforces.com/blog/entry/66040   The Intuition Behind NIM and Grundy Numbers in Combinatorial Game Theory
 https://en.wikipedia.org/wiki/Partial_fraction_decomposition   Partial_fraction_decomposition
 https://codeforces.com/blog/entry/98334   Aliens trick
