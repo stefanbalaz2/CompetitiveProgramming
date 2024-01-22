@@ -93,6 +93,7 @@ https://codeforces.com/blog/entry/80383     link cut
 https://codeforces.com/blog/entry/111566    faster moduo
 https://codeforces.com/blog/entry/115696    polynomial sampling shift
 https://codeforces.com/blog/entry/17787     wavelet matrix and palindromic tree
+https://codeforces.com/blog/entry/111399    online fft
 
 
 
@@ -105,7 +106,6 @@ https://codeforces.com/blog/entry/83467     queue like undoing on DS
 https://codeforces.com/blog/entry/111117    pq-like undoing on DS
 https://codeforces.com/blog/entry/111861    centroid on graphs with cycles
 https://codeforces.com/blog/entry/100910    collection of little techniques/ procitaj u komentarima za bitsetove trick
-https://codeforces.com/blog/entry/111399    online fft
 https://codeforces.com/blog/entry/99598     moment generating functions and q-analogs
 https://codeforces.com/blog/entry/47764     dp tricks
 https://codeforces.com/blog/entry/76447     ode, generator functions
