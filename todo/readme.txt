@@ -79,6 +79,7 @@ https://codeforces.com/blog/entry/83467     queue like undoing on DS
 https://codeforces.com/blog/entry/111117    pq-like undoing on DS
 https://codeforces.com/blog/entry/111861    centroid on graphs with cycles
 https://codeforces.com/blog/entry/100910    collection of little techniques/ procitaj u komentarima za bitsetove trick
+https://codeforces.com/blog/entry/47764     dp tricks
 
 
 
@@ -107,7 +108,6 @@ todo:
 
 https://codeforces.com/blog/entry/124815    n^3 matrix expo
 https://codeforces.com/blog/entry/99598     moment generating functions and q-analogs
-https://codeforces.com/blog/entry/47764     dp tricks
 https://codeforces.com/blog/entry/76447     ode, generator functions
 https://codeforces.com/blog/entry/100279    transposed multi-eval
 https://codeforces.com/blog/entry/94190     network simplex
