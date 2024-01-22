@@ -113,6 +113,7 @@ https://codeforces.com/blog/entry/103979  combinatorial species, intuition behin
 https://codeforces.com/blog/entry/110393  heuristic contest tips
 https://bminaiev.github.io/simulated-annealing
                                           minimax theorem
+https://codeforces.com/blog/entry/98376   Linear Basis (Xor Basis Extended)
 
 
 
@@ -124,7 +125,6 @@ https://codeforces.com/blog/entry/99598     moment generating functions and q-an
 https://codeforces.com/blog/entry/76447     ode, generating functions
 
 https://codeforces.com/blog/entry/108395  lattice paths
-https://codeforces.com/blog/entry/98376   Linear Basis (Xor Basis Extended)
 https://codeforces.com/blog/entry/66040   The Intuition Behind NIM and Grundy Numbers in Combinatorial Game Theory
 https://en.wikipedia.org/wiki/Partial_fraction_decomposition   Partial_fraction_decomposition
 https://codeforces.com/blog/entry/98334   Aliens trick
