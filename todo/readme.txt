@@ -81,6 +81,7 @@ https://codeforces.com/blog/entry/111861    centroid on graphs with cycles
 https://codeforces.com/blog/entry/100910    collection of little techniques/ procitaj u komentarima za bitsetove trick
 https://codeforces.com/blog/entry/47764     dp tricks
 https://codeforces.com/blog/entry/71097     randomized
+https://codeforces.com/blog/entry/98386   Lagrange interpolation and partial fraction decomposition
 
 
 
@@ -105,7 +106,13 @@ https://codeforces.com/blog/entry/111399    online fft
 https://codeforces.com/blog/entry/100279    transposed multi-eval
 https://codeforces.com/blog/entry/94190     network simplex
 https://codeforces.com/blog/entry/110961    greedoid
-
+https://codeforces.com/blog/entry/98413   generalized mobius inversion on posets
+https://codeforces.com/blog/entry/92306   An interesting algebraic construction
+https://codeforces.com/blog/entry/90690   Finding minimum residue of a linear function in O(log M) time
+https://codeforces.com/blog/entry/103979  combinatorial species, intuition behind GF
+https://codeforces.com/blog/entry/110393  heuristic contest tips
+https://bminaiev.github.io/simulated-annealing
+                                          minimax theorem
 
 
 
@@ -117,24 +124,7 @@ https://codeforces.com/blog/entry/99598     moment generating functions and q-an
 https://codeforces.com/blog/entry/76447     ode, generating functions
 
 https://codeforces.com/blog/entry/108395  lattice paths
-https://codeforces.com/blog/entry/98413   generalized mobius inversion on posets
-https://codeforces.com/blog/entry/98386   Lagrange interpolation and partial fraction decomposition
 https://codeforces.com/blog/entry/98376   Linear Basis (Xor Basis Extended)
 https://codeforces.com/blog/entry/66040   The Intuition Behind NIM and Grundy Numbers in Combinatorial Game Theory
-https://codeforces.com/blog/entry/90690   Finding minimum residue of a linear function in O(log M) time
-https://codeforces.com/blog/entry/92306   An interesting algebraic construction
 https://en.wikipedia.org/wiki/Partial_fraction_decomposition   Partial_fraction_decomposition
 https://codeforces.com/blog/entry/98334   Aliens trick
-minimax theorem
-https://codeforces.com/blog/entry/103979  combinatorial species, intuition behind GF
-https://codeforces.com/blog/entry/110393  heuristic contest tips
-https://bminaiev.github.io/simulated-annealing
-
-https://codeforces.com/contest/1510  E,F,H,I
-https://codeforces.com/gym/102978
-https://codeforces.com/gym/102155/problem/B  probabilities
-
-
-
-
-https://codeforces.com/problemset?order=BY_RATING_ASC&tags=combine-tags-by-or%2Cchinese+remainder+theorem%2Cconstructive+algorithms%2Cfft%2Cgames%2Cgreedy%2Cmath%2Cnumber+theory%2Cprobabilities%2C2600-&f0a28=1
