@@ -80,6 +80,7 @@ https://codeforces.com/blog/entry/111117    pq-like undoing on DS
 https://codeforces.com/blog/entry/111861    centroid on graphs with cycles
 https://codeforces.com/blog/entry/100910    collection of little techniques/ procitaj u komentarima za bitsetove trick
 https://codeforces.com/blog/entry/47764     dp tricks
+https://codeforces.com/blog/entry/71097     randomized
 
 
 
@@ -91,14 +92,19 @@ https://math.mit.edu/~goemans/18433S07/arborescence.pdf     directed mst
 https://www.cs.cmu.edu/~15850/notes/lec2.pdf                directed mst
 https://maspypy.com/%E5%A4%9A%E9%A0%85%E5%BC%8F%E3%83%BB%E5%BD%A2%E5%BC%8F%E7%9A%84%E3%81%B9%E3%81%8D%E7%B4%9A%E6%95%B0-%E9%AB%98%E9%80%9F%E3%81%AB%E8%A8%88%E7%AE%97%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%82%E3%81%AE    polynomials
 https://qiita.com/hotman78/items/b8986a23b8fdfe25c9fb#polynomial    a lot of asian stuff
+https://codeforces.com/blog/entry/124815    n^3 matrix expo
 https://codeforces.com/blog/entry/92128    formal power series on sets
 https://oi-wiki.org/                        kineski OI materijali
 https://codeforces.com/blog/entry/117237    GF vezbice
+https://codeforces.com/blog/entry/110801    probabilities
 https://codeforces.com/blog/entry/80383     link cut
 https://codeforces.com/blog/entry/111566    faster moduo
 https://codeforces.com/blog/entry/115696    polynomial sampling shift
 https://codeforces.com/blog/entry/17787     wavelet matrix and palindromic tree
 https://codeforces.com/blog/entry/111399    online fft
+https://codeforces.com/blog/entry/100279    transposed multi-eval
+https://codeforces.com/blog/entry/94190     network simplex
+https://codeforces.com/blog/entry/110961    greedoid
 
 
 
@@ -106,14 +112,9 @@ https://codeforces.com/blog/entry/111399    online fft
 todo:
 
 
-https://codeforces.com/blog/entry/124815    n^3 matrix expo
+                                            simplex
 https://codeforces.com/blog/entry/99598     moment generating functions and q-analogs
-https://codeforces.com/blog/entry/76447     ode, generator functions
-https://codeforces.com/blog/entry/100279    transposed multi-eval
-https://codeforces.com/blog/entry/94190     network simplex
-https://codeforces.com/blog/entry/110801    probabilities
-https://codeforces.com/blog/entry/110961    greedoid
-https://codeforces.com/blog/entry/71097     randomized
+https://codeforces.com/blog/entry/76447     ode, generating functions
 
 https://codeforces.com/blog/entry/108395  lattice paths
 https://codeforces.com/blog/entry/98413   generalized mobius inversion on posets
