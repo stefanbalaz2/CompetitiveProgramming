@@ -56,15 +56,17 @@ int append(int pos){
     last=q;
     len[q]=len[curr]+2;
 
+    if(curr==0){
+        link[q]=1;
+        return 1;
+    }
     curr=link[curr];
     while(true){
         if(pos-1-len[curr]>=0 && s[pos]==s[pos-1-len[curr]])break;
         curr=link[curr];
     }
 
-    if(trans[curr][c]==q)link[q]=1;
-    else link[q]=trans[curr][c];
-
+    link[q]=trans[curr][c];
 
     return 1;
 
