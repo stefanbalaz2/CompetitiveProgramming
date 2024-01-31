@@ -68,97 +68,63 @@ void adv(int dp[maxn][maxn]){
 }
 
 void shift_right(vector<int>&v,int d){
+    v.resize(v.size()+d);
     for(int i=v.size()-1;i>=d;i--)v[i]=v[i-d];
     for(int i=d-1;i>=0;i--)v[i]=0;
 }
-vector<int> berlekamp_massey(vector<int>s){
+vector<int>berlekamp_massey(vector<int>v){
 
-    vector<int>c,oldc;
-    int f=-1;
-    int last_delta=-1;
+   vector<int>oldc,currc;
+   int olddelta,f;
 
-    for(int i=0;i<s.size();i++){
+   for(int i=0;i<v.size();i++){
 
-        int delta=s[i];
-        for(int j=1;j<=c.size();j++)
-            delta=sub(delta,mul(s[i-j],c[j-1]));
+        int delta=v[i];
+        for(int j=0;j<currc.size();j++)
+            delta=sub(delta,mul(currc[j],v[i-j-1]));
 
         if(delta==0)continue;
 
-        if(f==-1){
-            c.resize(i+1);
+        if(currc.size()==0){
+            currc.resize(i+1);
+            olddelta=delta;
             f=i;
-            last_delta=delta;
         }
         else{
 
-            vector<int>d=oldc;
-            d.resize(d.size()+1);
-            shift_right(d,1);
-            for(int j=0;j<d.size();j++)d[j]=sub(0,d[j]);
-            d[0]=1;
+            vector<int>pom1,pom2;
+            pom1=oldc;
+            pom2=currc;
 
-            int pom=mul(invv(last_delta),delta);
-            for(int j=0;j<d.size();j++)d[j]=mul(d[j],pom);
+            for(int j=0;j<oldc.size();j++)pom1[j]=sub(0,pom1[j]);
+            shift_right(pom1,1);
+            pom1[0]=1;
+            int dm=mul(delta,invv(olddelta));
+            for(int j=0;j<pom1.size();j++)pom1[j]=mul(dm,pom1[j]);
+            shift_right(pom1,i-f-1);
 
-            int zeroes=i-f-1;
-            d.resize(d.size()+zeroes);
-            shift_right(d,zeroes);
+            pom1.resize(max(pom1.size(),pom2.size()));
+            pom2.resize(max(pom1.size(),pom2.size()));
 
-            vector<int>temp=c;
-            c.resize(max(c.size(),d.size()));
-            for(int j=0;j<d.size();j++)c[j]=add(c[j],d[j]);
+            for(int j=0;j<pom1.size();j++)
+                pom1[j]=add(pom1[j],pom2[j]);
 
-            if(i-temp.size()>f-oldc.size()){
-                last_delta=delta;
-                oldc=temp;
+            if(f-oldc.size()<i-currc.size()){
+                oldc=currc;
                 f=i;
+                olddelta=delta;
             }
 
+            currc=pom1;
+
         }
-    }
 
-    return c;
+
+   }
+
+   return currc;
+
 }
-int solve(vector<int>c,vector<int>s,ll n){
-
-    int m=c.size();
-    assert(m>0);
-
-    auto mul2 = [&](const vector<int>v1,const vector<int>v2) -> vector<int>{
-        vector<int>ret(v1.size()-1+v2.size());
-        for(int i=0;i<v1.size();i++)
-            for(int j=0;j<v2.size();j++)
-                ret[i+j]=add(ret[i+j],mul(v1[i],v2[j]));
-        for(int i=ret.size()-1;i>=m;i--)
-            for(int j=m-1;j>=0;j--)
-            ret[i-j-1]=add(ret[i-j-1],mul(ret[i],c[j]));
-        ret.resize(min((int)ret.size(),m));
-        return ret;
-    };
-
-    vector<int>base={0,1};
-    if(m==1){
-        base.resize(1);
-        base[0]=c[0];
-    }
-    vector<int>ret={1};
-    while(n){
-        if(n&1)ret=mul2(ret,base);
-        base=mul2(base,base);
-        n>>=1;
-    }
-
-    int rez=0;
-    s.resize(m);
-    ret.resize(m);
-    for(int i=0;i<m;i++)
-        rez=add(rez,mul(ret[i],s[i]));
-
-    return rez;
-}
-/*
-/// ova verzija ima otp duplo manje mul2 poziva
 int solve(vector<int>c,vector<int>s,ll n){
 
     int m=c.size();
@@ -203,7 +169,6 @@ int solve(vector<int>c,vector<int>s,ll n){
 
     return rez;
 }
-*/
 
 void go(int m){
 
