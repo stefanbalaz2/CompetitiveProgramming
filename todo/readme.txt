@@ -84,6 +84,7 @@ https://codeforces.com/blog/entry/71097     randomized
 https://codeforces.com/blog/entry/98386   Lagrange interpolation and partial fraction decomposition
 https://codeforces.com/blog/entry/66040   The Intuition Behind NIM and Grundy Numbers in Combinatorial Game Theory
 https://en.wikipedia.org/wiki/Partial_fraction_decomposition   Partial_fraction_decomposition
+https://codeforces.com/blog/entry/108395  lattice paths
 
 
 
@@ -125,5 +126,4 @@ todo:
                                             simplex
 https://codeforces.com/blog/entry/99598     moment generating functions and q-analogs
 https://codeforces.com/blog/entry/76447     ode, generating functions
-https://codeforces.com/blog/entry/108395  lattice paths
 https://codeforces.com/blog/entry/98334   Aliens trick
