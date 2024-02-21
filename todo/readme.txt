@@ -126,4 +126,5 @@ todo:
 
                                             simplex
 https://codeforces.com/blog/entry/76447     ode, generating functions
+https://codeforces.com/blog/entry/126124    composing some polynomials
 https://codeforces.com/blog/entry/98334   Aliens trick
