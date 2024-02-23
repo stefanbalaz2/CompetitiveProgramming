@@ -118,6 +118,7 @@ https://codeforces.com/blog/entry/110393  heuristic contest tips
 https://bminaiev.github.io/simulated-annealing
                                           minimax theorem
 https://codeforces.com/blog/entry/98376   Linear Basis (Xor Basis Extended)
+https://codeforces.com/blog/entry/126124    composing some polynomials
 
 
 
@@ -126,5 +127,4 @@ todo:
 
                                             simplex
 https://codeforces.com/blog/entry/76447     ode, generating functions
-https://codeforces.com/blog/entry/126124    composing some polynomials
 https://codeforces.com/blog/entry/98334   Aliens trick
