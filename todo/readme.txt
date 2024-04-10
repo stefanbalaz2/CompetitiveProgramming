@@ -124,7 +124,7 @@ https://codeforces.com/blog/entry/126124    composing some polynomials
 
 todo:
 
-
+https://codeforces.com/blog/entry/128204    fast poly composition and compositional inverse, OBAVEZNO
                                             simplex
 https://codeforces.com/blog/entry/76447     ode, generating functions
 https://codeforces.com/blog/entry/98334   Aliens trick
