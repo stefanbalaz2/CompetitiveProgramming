@@ -23,133 +23,113 @@
 
 
 */
-#include <bits/stdc++.h>
-using namespace std;
+#include<bits/stdc++.h>
 #define ff first
 #define ss second
 #define pb push_back
-#define ll long long
-#define ull unsigned long long
+typedef unsigned long long ll;
+using namespace std;
 typedef pair<int,int> pii;
 
-int mod=998244353;
-int phimod=0;
-inline int add(int x,int y){int ret=x+y;if(ret>=mod)ret-=mod;return ret;}
-inline int sub(int x,int y){int ret=x-y;if(ret<0)ret+=mod;return ret;}
-inline int mul(int x,int y){return ((ll)x*y)%mod;}
-inline int step(int base,int pw){if(base==0)return 0;int ret=1;while(pw){if(pw&1)ret=mul(ret,base);base=mul(base,base);pw>>=1;}return ret;}
-inline int invv(int x){return step(x,phimod-1);}
+using int128=__int128_t;
 
-int pos[100000];
-vector<int>primes;
-void sito(){
-    for(int i=2;i<100000;i++){
-        if(pos[i])continue;
-        primes.pb(i);
-        for(int j=i;j<100000;j+=i)pos[j]=1;
-    }
-}
+ll mod;
+ll phimod;
+inline ll add(ll x,ll y){ll ret=x+y;if(ret>=mod)ret-=mod;return ret;}
+inline ll sub(ll x,ll y){ll ret=x-y;if(ret<0)ret+=mod;return ret;}
+inline ll mul(ll x,ll y){return ((int128)x*y)%mod;}
+inline ll step(ll base,ll pw){ll ret=1;while(pw){if(pw&1)ret=mul(ret,base);base=mul(base,base);pw>>=1;}return ret;}
+inline ll invv(ll x){return step(x,phimod-1);}
 
-int phi(int n){
+const int maxn=2e5+10;
 
-    if(n==1)return 1;
-
+int phi(int x){
     int ret=1;
-    for(int i=0;i<primes.size();i++){
-
-        int id=primes[i];
-        if(id*id>n)break;
-        if(n%id)continue;
-
-        int pret=1;
-        while(n%id==0){
-            n/=id;
-            pret*=id;
+    for(int i=2;i*i<=x;i++){
+        if(x%i)continue;
+        int pom=1;
+        while(x%i==0){
+            pom*=i;
+            x/=i;
         }
-
-        ret*=pret-pret/id;
+        ret*=pom-pom/i;
     }
-    if(n>1)ret*=n-1;
-
+    if(x>1)ret*=x-1;
     return ret;
 }
 
-int stb(int x,int k){
+int shanks(int a,int b){
 
-    int bsize=sqrt(mod)+1;
-
+    int block=sqrt(mod)+5;
+    int curr=b;
+    int d=invv(a);
     unordered_map<int,int>mapa;
-    int invr=invv(x);
-    int right=k;
-    mapa[right]=0;
-    for(int i=1;i<bsize;i++){
-        right=mul(right,invr);
-        if(mapa.find(right)!=mapa.end())continue;
-        mapa[right]=i;
+    for(int i=0;i<block;i++){
+        if(mapa.find(curr)==mapa.end()){
+            mapa[curr]=i;
+        }
+        curr=mul(curr,d);
     }
 
-
-    invr=step(x,bsize);
-    int left=1;
-    for(int i=0;i<=bsize;i++){
-        if(mapa.find(left)!=mapa.end())return mapa[left]+bsize*i;
-        left=mul(left,invr);
+    curr=1;
+    d=step(a,block);
+    for(int i=0;i<=block;i++){
+        if(mapa.find(curr)!=mapa.end()){
+            return i*block+mapa[curr];
+        }
+        curr=mul(curr,d);
     }
-
     return -1;
 }
+int go(int a,int b,int m){
+    mod=m;
 
-int go(int x,int k){
+    if(m==1)return 0;
 
     int curr=1;
-    for(int i=0;i<=40;i++){
-        if(curr==k)return i;
-        curr=mul(curr,x);
+    for(int i=0;i<50;i++){
+        if(curr==b)return i;
+        curr=mul(curr,a);
     }
 
-    int g=__gcd(x,mod);
+    int g;
     int c=0;
-    int a=1;
-    while(g!=1){
-
-        if(k%g!=0)return -1;
-
-        k/=g;
+    int coef=1;
+    while((g=__gcd(a,(int)mod)) != 1){
         mod/=g;
-        if(mod==0)return -1;
+        coef=mul(coef,a/g);
         c++;
-        a=mul(a,x/g);
-
-        g=__gcd(x,mod);
+        if(b%g!=0)return -1;
+        assert(mod!=0);
+        b/=g;
     }
-
-
     phimod=phi(mod);
-    k=mul(k,invv(a));
+    b=mul(b,invv(coef));
 
-    int pom=stb(x,k);
+    if(mod==1)return c;
+
+    int pom=shanks(a,b);
     if(pom==-1)return pom;
-    return pom+c;
-
+    else return pom+c;
 }
 
-int main() {
+int main(){
 
-    ///freopen("test.txt","r",stdin);
-    ///freopen("moj.txt","w",stdout);
-
-    sito();
+    //freopen("test.txt","r",stdin);
 
     while(1){
 
         int x,z,k;
         scanf("%d %d %d",&x,&z,&k);
-        if(x==0 && k==0 && z==0)break;
+
+        if(x==0 && z==0 && k==0){
+            break;
+        }
+
         x%=z;
         k%=z;
-        mod=z;
-        int pom=go(x,k);
 
+        int pom=go(x,k,z);
         if(pom==-1)printf("No Solution\n");
         else printf("%d\n",pom);
 
@@ -157,4 +137,3 @@ int main() {
 
     return 0;
 }
-
